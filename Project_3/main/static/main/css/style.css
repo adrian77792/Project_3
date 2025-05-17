@@ -1,0 +1,91 @@
+/* Responsive logo/image in header */
+header img {
+    max-width: 100%; /* Ensures image doesn't overflow container */
+}
+
+/* Fixed header setup */
+header {
+    position: fixed; /* Keep header visible while scrolling */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Full viewport width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure header stays above other elements */
+    padding: 0; 
+    margin: 0; 
+    overflow: hidden;
+    color: #ffffff;
+    text-align: center;
+}
+
+/* Navbar configuration */
+.navbar {
+    padding: 0;
+    margin: 0;
+    width: 100% !important; /* Force full width */
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Navbar links */
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px; /* Clickable area padding */
+}
+.navbar a:hover {
+    background-color: #ff0000; /* Visual feedback on hover */
+}
+
+/* Brand-specific navbar tweaks */
+.navbar-brand {
+    padding: 0; 
+    margin-left: 0;
+    border-radius: 5px; 
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+}
+
+.navbar.bg-dark {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Supplementary text in navbar */
+.navbar-text {
+    margin-left: 5px; 
+}
+
+/* Nav links with bold and white styling */
+.navbar-nav .nav-link {
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    font-weight: bold; 
+}
+
+.navbar-nav .nav-link:hover {
+    color: #cccccc; 
+}
+
+/*Home/section about*/
+#about_me{
+    display: flex;
+    flex-direction: row;
+}
+.about_left, .about_right{
+    margin:0%;
+    width: 50%;
+
+}
+
+.about_left img{
+    max-width: 80%;
+}
+.about_right{
+    max-width: 80%;
+    padding-top: 10rem;
+
+}
