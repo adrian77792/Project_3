@@ -1,4 +1,22 @@
-/* Responsive logo/image in header */
+:root {
+    --hover-height:35rem; 
+    --hover-width: 35%;
+    --other-width: 20%;
+    --speed: 1000ms;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Segoe UI', sans-serif;
+    overflow-x: hidden;
+  }
+  /* Responsive logo/image in header */
 header img {
     max-width: 100%; /* Ensures image doesn't overflow container */
 }
@@ -19,6 +37,7 @@ header {
     color: #ffffff;
     text-align: center;
 }
+
 
 /* Navbar configuration */
 .navbar {
@@ -90,15 +109,9 @@ header {
 
 }
 
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f0f0;
-  }
-  
   .services-container {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 20px;
@@ -131,3 +144,121 @@ body {
     color: #666;
     font-size: 14px;
   }
+  
+  .container {
+    margin-top: 1rem;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: var(--speed) ease-in-out;
+  }
+  
+  .split {
+    flex: 1;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    transition: all var(--speed) ease-in-out;
+    margin-right: 1rem;
+    height: 25rem;
+    border-radius: 5px;
+  }
+  
+  .split::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+  
+  .split h1 {
+    position: relative;
+    z-index: 2;
+    color: #ffffff;
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .split p {
+    padding: 1rem;
+    text-align: justify;
+    color: white;
+    background: rgba(20, 20, 20, 0.5);
+    z-index: 2;
+    position:relative;
+  }
+  .column_text {
+    opacity: 0;
+    transition: all ease-in-out 0.2s;
+  }
+ .split:hover .column_text {
+    opacity: 1;
+  }
+  
+  .button {
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border: 2px solid #fff;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+    border-radius: 5px;
+  }
+  
+  .button:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+  
+  .one {
+    background: url('../img/eye1.png') center/cover no-repeat;
+  }
+  
+  .two {
+    background: url('../img/training1.jpg') center/cover no-repeat;
+  }
+  
+  .three {
+    background: url('../img/pernament1.jpg') center/cover no-repeat;
+  }
+  
+  .four {
+    background: url('../img/astetic1.jpg') center/cover no-repeat;
+  }
+  
+  /* Hover Effects */
+  .hover-one .one { flex: 0 0 var(--hover-width); height: var(--hover-height); }
+  .hover-one .two,
+  .hover-one .three,
+  .hover-one .four { flex: 0 0 var(--other-width); }
+  
+  .hover-two .two { flex: 0 0 var(--hover-width); height: var(--hover-height); }
+  .hover-two .one,
+  .hover-two .three,
+  .hover-two .four { flex: 0 0 var(--other-width); }
+  
+  .hover-three .three { flex: 0 0 var(--hover-width); height: var(--hover-height); }
+  .hover-three .one,
+  .hover-three .two,
+  .hover-three .four { flex: 0 0 var(--other-width); }
+  
+  .hover-four .four { flex: 0 0 var(--hover-width); height: var(--hover-height); }
+  .hover-four .one,
+  .hover-four .two,
+  .hover-four .three { flex: 0 0 var(--other-width); }
+  
+  @media (max-width: 768px) {
+    .split h1 {
+      font-size: 1.5rem;
+    }
+    .button {
+      font-size: 0.9rem;
+      padding: 0.6rem 1.2rem;
+    }
+  }
+  
