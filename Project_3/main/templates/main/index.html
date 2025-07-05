@@ -19,6 +19,24 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
 
+        <div class="space-between" style="padding: 0;">
+          
+            <!-- Company logo displayed on the left side -->
+            <div class="menu_center">
+                <a class="navbar-brand me-3 logo" href="index.html" style="padding: 0; margin-right: 10px;">
+                    <img src="../static/main/img/logo.png" alt="Construction company logo">
+                </a>
+                <span class="navbar-text interactive-text" style="padding: 0; font-family: 'Lora', 'Helvetica Neue', Helvetica, sans-serif;">
+                    Beauty Salon
+                </span>                           
+            </div>
+          <!--<div class= "button-container">
+            <button class="book-now"> Book Now
+            </button>
+
+          </div>-->
+            
+        </div>
         <!-- Hamburger button for mobile devices -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -35,9 +53,6 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'services' %}">Services</a>
                 </li>
-            
-            </ul>
-            <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'services' %}">Blog</a>
                 </li>
@@ -50,30 +65,17 @@
             </ul>
         </div>
 
-        <div class="space-between" style="padding: 0;">
-          
-            <!-- Company logo displayed on the left side -->
-            <div class="menu_center">
-                <a class="navbar-brand me-3 logo" href="index.html" style="padding: 0; margin-right: 10px;">
-                    <img src="../static/main/img/logo.png" alt="Construction company logo" height="100">
-                </a>
-                <span class="navbar-text interactive-text" style="padding: 0; font-family: 'Lora', 'Helvetica Neue', Helvetica, sans-serif;">
-                    Beauty Salon
-                </span>                           
-            </div>
-            <!-- Text describing the company -->
-            
-        </div>
     </div>
 </nav>
     </header>
+    <p class="navbar-placeholder"></p>
     <section id="about_me" class="section">
         
         <div class="about_left">
             <img src="{% static '../../../../static/main/img/sandra_salon.jpg' %}" alt="This is me">
         </div>
 
-        <div class="about_right">
+        <div class="about_right service">
             <h1>Sandra Szczepaniak</h1>
                 <p><strong>High Wycombe, Buckinghamshire / United Kingdom</strong></p>
 
@@ -90,67 +92,49 @@
                     to now share it all with you.
                 </p>
 
-                <p>
-                    I was not limited by the lack of English language and the distance at that time.
-                    That’s why I chose to work with Luxury Eye, the world’s top 1 in product quality.
-                </p>
+                <div class="container">
+                    <div class="split one">
+                      <div>
+                        <h1 class="column_name">Eyelash Styling</h1>
+                        <p class="column_text"> ipsum dolor, sit amet consectetur adipisicing elit. 
+                        Tempore aut quisquam rerum, possimus enim sint excepturi id atque quis, 
+                        soluta impedit exercitationem odit tenetur perferendis quo doloribus eius temporibus sit!</p>
+                        <a href="#" class="button column_button">Read more</a>
+                      </div>
+                    </div>
+                    <div class="split two">
+                      <div>
+                        <h1 class="column_name">Eyelash Training</h1>
+                        <p class="column_text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                            Tempore aut quisquam rerum, possimus enim sint excepturi id atque quis, 
+                            soluta impedit exercitationem odit tenetur perferendis quo doloribus eius temporibus sit!</p>
+                        <a href="#" class="button column_button">Read more</a>
+                      </div>
+                    </div>
+                    <div class="split three">
+                      <div>
+                        <h1 class="column_name">Permanent Makeup</h1>
+                        <p class="column_text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                            Tempore aut quisquam rerum, possimus enim sint excepturi id atque quis, 
+                            soluta impedit exercitationem odit tenetur perferendis quo doloribus eius temporibus sit!</p>
+                        <a href="#" class="button column_button">Read more</a>
+                      </div>
+                    </div>
+                    <div class="split four">
+                      <div>
+                        <h1 class="column_name">Aesthetic</h1>
+                        <p class="column_text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                            Tempore aut quisquam rerum, possimus enim sint excepturi id atque quis, 
+                            soluta impedit exercitationem odit tenetur perferendis quo doloribus eius temporibus sit!</p>
+                        <a href="#" class="button column_button">Read more</a>
+                      </div>
+                    </div>
+                  </div>
 
-                <p>
-                    If you are looking for a patient instructor who will inspire you to this profession,
-                    I invite you to train with me in High Wycombe, Buckinghamshire, UK.
-                </p>
-
-                <p>
-                    After my training you will not be afraid to start working with the client.
-                    You still have my support afterwards. I’m here for you not only during training day.
-                </p>
-
-                <p>See you soon!</p>
-
-                <p><em>“The impossible I do immediately, miracles take a little longer.”<br>
-                ~David Berglas</em></p>
-        </div>
     </section>
 
     <section>
-        <div class="container">
-            <div class="split one">
-              <div>
-                <h1 class="column_name">Eyelash Styling</h1>
-                <p class="column_text"> ipsum dolor, sit amet consectetur adipisicing elit. 
-                Tempore aut quisquam rerum, possimus enim sint excepturi id atque quis, 
-                soluta impedit exercitationem odit tenetur perferendis quo doloribus eius temporibus sit!</p>
-                <a href="#" class="button column_button">Read more</a>
-              </div>
-            </div>
-            <div class="split two">
-              <div>
-                <h1 class="column_name">Eyelash Training</h1>
-                <p class="column_text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                    Tempore aut quisquam rerum, possimus enim sint excepturi id atque quis, 
-                    soluta impedit exercitationem odit tenetur perferendis quo doloribus eius temporibus sit!</p>
-                <a href="#" class="button column_button">Read more</a>
-              </div>
-            </div>
-            <div class="split three">
-              <div>
-                <h1 class="column_name">Permanent Makeup</h1>
-                <p class="column_text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                    Tempore aut quisquam rerum, possimus enim sint excepturi id atque quis, 
-                    soluta impedit exercitationem odit tenetur perferendis quo doloribus eius temporibus sit!</p>
-                <a href="#" class="button column_button">Read more</a>
-              </div>
-            </div>
-            <div class="split four">
-              <div>
-                <h1 class="column_name">Aesthetic</h1>
-                <p class="column_text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                    Tempore aut quisquam rerum, possimus enim sint excepturi id atque quis, 
-                    soluta impedit exercitationem odit tenetur perferendis quo doloribus eius temporibus sit!</p>
-                <a href="#" class="button column_button">Read more</a>
-              </div>
-            </div>
-          </div>
+        
     </section>
     <ul>
         {% for service in services %}
