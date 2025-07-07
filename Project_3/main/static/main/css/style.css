@@ -29,12 +29,12 @@ body {
   }
 
   .logo {
-    height: 50px;
+    height: 50px !important;
 
   }
 
   .logo img {
-    height: 50px;
+    height: 50px !important;
 
   }
 
@@ -172,7 +172,7 @@ body {
     font-size: 1.3rem;
     margin-bottom: 10px;
     color: #6a4b7c;
-    background-color: #EFE6DF;
+    background-color: #e8c9b2;
     border-top-left-radius: 14px;
     border-top-right-radius: 14px;
   }
@@ -233,7 +233,7 @@ body {
     width: 100%;
     transform: translateY(100%); 
     transition: transform 0.4s ease;
-    background-color: #EFE6DF; 
+    background-color: #e8c9b2; 
     padding: 10px 20px;
     display: none;
     border-bottom-left-radius: 16px;
