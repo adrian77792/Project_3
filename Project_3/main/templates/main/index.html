@@ -14,50 +14,73 @@
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 {% load static %}
-<video autoplay muted loop playsinline id="background-video">
-  <source src="{% static 'main/img/pernament2.mp4'%}" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+
  <!-- HEADER MENU -->
  <header class="top-nav">
+  
     <div class="nav-top">
+
+      <video autoplay muted loop playsinline id="background-video">
+        <source src="{% static 'main/video/pernament2.mp4'%}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+<div>
+      <div class="hamburger" id="hamburger" onmouseover="openMENU()" >
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+
       <div class="nav-icons">
         <span class="icon" title="Calender">👜</span>
         <span class="icon" title="User account">👤</span>
 
       </div>
+    </div>
 
-      <div class="logo">
-        <img src="{% static 'main/img/logo.png' %}" alt="Logo">
+      <div class="logo-3d-wrapper">
+        <img src="{% static 'main/img/logo.png' %}" alt="Logo" class="logo-rotate-z" />
       </div>
 
       <button class="book-btn">BOOK NOW</button>
     </div>
-<div class="hamburger">
-  <div class="line"></div>
-  <div class="line"></div>
-  <div class="line"></div>
-</div>
-    <nav class="nav-bottom">
-      <a href="#">Welcome</a>
-      <a href="#">About Me</a>
-      <a href="#">Services</a>
-      <a href="#">Opinions</a>
-      <a href="#">Price List</a>
-      <a href="#">Blog</a>
-      <a href="#">Career</a>
-      <a href="#">Contact</a>
+
+    <nav class="nav-bottom" id="nav-bottom" onmouseleave="closeMENU()">
+      <div class="nav-top1">
+        <div id="hamburger2">
+          <img src="{% static 'main/img/logo.png' %}" alt="Logo" height="100px" />
+        </div>
+        <div class="hamburger cross" onclick="closeMENU()">
+          <div class="line cross1"></div>
+          <div class="line cross2"></div>
+          <div class="line cross3"></div>
+        </div>
+      </div>
+      
+      <a class="menu left first"  href="#">Welcome</a>
+      <a class="menu left" href="#">About Me</a>
+      <a class="menu left" href="#">Services</a>
+      <a class="menu left" href="#">Opinions</a>
+      <a class="menu left" href="#">Price List</a>
+      <a class="menu left" href="#">Blog</a>
+      <a class="menu left" href="#">Career</a>
+      <a class="menu left" href="#">Competitions</a>
+      <a class="menu left" href="#">Contact</a>
     </nav>
   </header>
 
+  <video autoplay muted loop playsinline id="background-video">
+    <source src="{% static 'main/video/video2.mp4' %}" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
   <!-- MAIN SERVICES SECTION -->
   <section class="main-section">
     
     <div class="left-photo box">
         <div class="image-wrapper">
-          <img class="image_panel" src="{% static 'main/img/sandra_salon.jpg' %}" alt="This is me">
+          <img class="image_panel" src="{% static 'main/img/sandra_salon.png' %}" alt="This is me">
           <div class="overlay-text-wrapper">
-            <p class="overlay-text">Discover your potential with me. I'm expert in eyelashes, aesthetic medicine and permanent makeup</p>
+            <p class="overlay-text">Discover your potential with me. I'm expert educator in eyelashes, aesthetic medicine and permanent makeup</p>
           </div>
         </div>
     </div>
@@ -67,8 +90,8 @@
       <div class="services-grid">
         
         <div class="service-card card1">
-            <h3>Training Courses</h3>
-            <p>Professional certified lash and brow training for stylists.</p>
+            <h3>Eyelashes</h3>
+            <p>Professional eyelash styling – extensions, volume, and lash lift.</p>
             <a href="#">Find out more</a>
         </div>
 
@@ -100,6 +123,31 @@
         <li>No services.</li>
     {% endfor %}
 </ul>
+
+<!-- Additional spacing to prevent content from overlapping the footer -->
+<div class="header-placeholder"></div>
+<!-- Footer section containing copyright and external contact links -->
+<footer id="footer" class="bg-dark text-light py-3">
+    <div class="container d-flex justify-content-between align-items-center h-100">
+        
+        <!-- Dynamic year using JavaScript to keep content up-to-date -->
+        <p id="footer-text" class="mb-0">&copy; <span id="year"></span> VALERIA LONDON. All rights reserved.</p>
+
+       <!-- Social media and contact icons for accessibility and client interaction -->
+        <div class="footer-icons text-end">
+          <a class="hidden-link" target="_blank" href="https://www.facebook.com/profile.php?id=100083205698879">
+            <img class="footer-icon mx-2" src="{% static 'main/img/social.png' %}" alt="This is link to Facebook">
+        </a>
+        <a class="hidden-link" target="_blank" href="mailto:Marexlux@op.pl">
+            <img class="footer-icon mx-2" src="assets/icons/message.png" alt="This is link to Email">
+        </a>
+        <a class="hidden-link" target="_blank" href="tel:+48785384981">
+            <img class="footer-icon mx-2" src="assets/icons/phone.png" alt="This is our phone number">
+        </a>
+        </div>
+    </div>
+</footer>
 <script src="{% static 'main/js/column.js' %}"></script>
+<script src="{% static 'main/js/menu.js' %}"></script>
 </body>
 </html>
