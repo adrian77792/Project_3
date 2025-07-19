@@ -15,6 +15,7 @@ body {
   header.top-nav {
     border-bottom: 3px solid gold; /* złoto zamiast różu */
     height: 300px; /* dopasuj wysokość do logo */
+    background-color: white;
   
   }
 
@@ -404,6 +405,11 @@ header.top-nav {
   object-fit: cover;
   z-index: -1;
   pointer-events: none;
+}
+.placeholder {
+  height: 200px;
+  background-color: #f0f0f0;
+  border: 1px dashed #bbb;
 }
 
   @media (max-width: 900px) {
