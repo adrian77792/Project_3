@@ -1,21 +1,24 @@
+body,* {
+  padding: 0;
+  margin: 0;
+}
 body {
+
     margin: 0;
     font-family: 'Helvetica Neue', sans-serif;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     color: #270049; /* fioletowy tekst główny */
-    /*background-image: url('/static/main/img/background.jpeg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;*/
   }
 
   /* === TOP NAVIGATION === */
   header.top-nav {
     border-bottom: 3px solid gold; /* złoto zamiast różu */
-    height: 300px; /* dopasuj wysokość do logo */
-    background-color: white;
+    height: 200px; /* dopasuj wysokość do logo */
+    background-color:#6a4b7c;
+    margin: 0;
+    padding: 0;
   
   }
 
@@ -24,12 +27,19 @@ body {
     overflow: hidden;
     z-index: 1;
     display: flex;
+    flex-direction: column;
+    height: 197px;
+  }  
+
+  .nav-top-elements {
+    display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 30px;
+    padding: 5px 30px 0px 30px;
     color: #6a4b7c;
-    height: 297px;
-  }  
+    height: 167px;
+  }
 
   .nav-top1 {
     display: flex;
@@ -70,28 +80,55 @@ body {
 }
 
 #nav-bottom .left{
-color: #270049;
+color: #dd7cf0;
 font-size:x-large;
 margin-left: 1.5rem;
 display: inline;
 width: fit-content;
 transition:all 0.3s ease-in-out ;
+text-shadow: 1px 1px 2px #270049;
 }
 
 #nav-bottom .left:hover{
-  color: gold;
-  border-bottom: 3px solid gold;
+  border-bottom: gold solid 2px;
   margin-left: 1.5rem;
   }
   #nav-bottom .first {
-    color:gold;
+    text-shadow: 1px 1px 2px #270049;
+    color: #270049;
   }
 
   #nav-bottom .first:hover {
     color:#270049;
-    border-bottom: 3px solid #270049;
+    border-bottom: gold solid 3px;
 
   }
+
+  .left {
+    text-decoration: none;
+  }
+
+  .text-with-ellipse-line {
+    position: relative;
+    display: inline-block;
+
+  }
+
+  .text-with-ellipse-line svg {
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 15px;
+  }
+
+  .text-with-ellipse-line svg path {
+    stroke: transparent;
+    stroke-width: 1.5;
+    fill: none;
+    stroke-linecap: round;
+  }
+
   .line {
     width: 50px;
     height: 10px;
@@ -165,10 +202,10 @@ transition:all 0.3s ease-in-out ;
     flex-direction: column;
     border-top: 1.6px solid #ffd700; /* złoto */
     padding: 12px 10px;
-    gap: 20px;
-    background-color: #fff8f36b;
+    gap: 0.5px;
+    background-color: #d9cedf15;
     height: calc(100vh);
-    width: 25%;
+    width: 15%;
     position: fixed;
     top:0;
     left:0;
@@ -181,18 +218,52 @@ transition:all 0.3s ease-in-out ;
     transform: translateX(0);
   }
 
-  .nav-bottom a {
-    text-decoration: none;
-    color: #270049; /* fiolet */
-    font-weight: 600;
-    font-size: 0.95rem;
-    transition: color 0.3s ease;
-  }
+ /*/* Podkreślenie z eliptycznymi końcami pod linkami w menu *
+ .nav-bottom a {
+  position: relative;
+  color: #6a4b7c;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  padding-bottom: 14px;
+  transition: color 0.3s ease;
+  display: inline-block;
+}
 
-  .nav-bottom a:hover {
-    color: gold; /* róż */
-    text-shadow: 0 0 6px white;
-  }
+/* Pseudoelement z zaokrąglonymi końcami *
+.nav-bottom a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 15%;
+  right: 15%;
+  height: 8px;
+  background-color: #ffc107;
+  border-top-left-radius: 999px;
+  border-top-right-radius: 999px;
+  transform: scaleX(0.6) translateY(4px);
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+/* Hover – podkreślenie pojawia się *
+.nav-bottom a:hover::after {
+  opacity: 1;
+  transform: scaleX(1) translateY(4px);
+}
+
+/* Hover – zmiana koloru tekstu *
+.nav-bottom a:hover {
+  color: gold;
+}
+
+/* Opcjonalnie – domyślne podkreślenie dla .first *
+.nav-bottom a.first::after {
+  opacity: 1;
+  transform: scaleX(1) translateY(4px);
+}*/
+
 
   /* === MAIN SECTION === */
   .main-section {
@@ -212,7 +283,7 @@ transition:all 0.3s ease-in-out ;
     height: 670px;
     text-align: center;
     border-radius: 14px;
-    box-shadow: 0 8px 20px rgba(106, 75, 124, 0.1);
+    
   }
 
   .left-photo img {
@@ -250,7 +321,7 @@ transition:all 0.3s ease-in-out ;
   .service-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(233, 140, 163, 0.3);
-    border-color: #270049;
+    border-color: #6a4b7c;
   }
 
   .service-card h3 {
@@ -260,7 +331,7 @@ transition:all 0.3s ease-in-out ;
     font-size: 1.3rem;
     margin-bottom: 10px;
     color: white;
-    background-color: #270049;
+    background-color: #6a4b7c;
     border-top-left-radius: 14px;
     border-top-right-radius: 14px;
   }
@@ -272,7 +343,7 @@ transition:all 0.3s ease-in-out ;
     margin-bottom: 15px;
     opacity: 0;
     transition: all 0.6s ease;
-    text-shadow: 3px 3px #270049;
+    text-shadow: 3px 3px #6a4b7c;
     padding: 0 1rem;
     letter-spacing: 1px;
     }
@@ -286,7 +357,7 @@ transition:all 0.3s ease-in-out ;
     margin-top: 10px;
     margin-bottom: 12px;
     padding: 10px 18px;
-    background-color: #270049;
+    background-color: #6a4b7c;
     color: white;
     border-radius: 25px;
     text-decoration: none;
@@ -319,11 +390,9 @@ transition:all 0.3s ease-in-out ;
     bottom: 0;
     left: 0;
     width: 100%;
-    transform: translateY(100%); 
-    transition: transform 0.4s ease;
-    background-color: #270049; 
+    display: block;
+    background-color: #6a4b7c; 
     padding: 10px 20px;
-    display: none;
     border-bottom-left-radius: 16px;
     border-bottom-right-radius: 16px;
   }
@@ -331,10 +400,11 @@ transition:all 0.3s ease-in-out ;
   
   .overlay-text {
     margin: 0;
-    color: white;
+    color: transparent;
     font-size: 1.25rem;
     font-weight:lighter;
     text-align: center;
+    font-weight: bold;
   }
   
   
@@ -343,16 +413,17 @@ transition:all 0.3s ease-in-out ;
     display: block;
   }
 
+  .image-wrapper:hover .overlay-text {
+    transform: translateY(0);
+    color: white;
+    
+
+  }
+
 .box {
     min-height: 320px;
     text-align: center;
 }
-
-.box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(233, 140, 163, 0.3);
-    border-color: #270049 !important;
-  }
 
   #background-video {
     position: absolute;
@@ -377,6 +448,7 @@ transition:all 0.3s ease-in-out ;
 
 /* Fixed footer positioning */
 #footer {
+  background-color: #6a4b7cb9 !important;
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -387,29 +459,23 @@ transition:all 0.3s ease-in-out ;
   flex-direction: column; 
   justify-content: center; 
   height: 50px; 
-  border-top: 1.5px solid #ffc107;
+  border-top: 2px solid #ffc107;
 }
 
 header.top-nav {
-  height: 350px;
+  height: 200px;
   position: relative;
   overflow: hidden;
 }
 
 #background-video {
   position: absolute;
-  top: 0;
   left: 0;
   width: 100%;
   height: 100% !important;
   object-fit: cover;
   z-index: -1;
   pointer-events: none;
-}
-.placeholder {
-  height: 200px;
-  background-color: #f0f0f0;
-  border: 1px dashed #bbb;
 }
 
   @media (max-width: 900px) {
@@ -476,16 +542,147 @@ header.top-nav {
     transform-origin: center center;
     display: block;
     margin: 0 auto;
-    height: 250px;
-    width: 250px;
+    height: 280px;
+    width: 280px;
   }
   
-  @keyframes rotateZ {
-    from {
-      transform: rotateZ(0deg);
+  .overlay-text-wrapper {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #6a4b7cb2; /* np. półprzezroczyste tło */
+    padding: 10px 20px;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    overflow: hidden;
+  }
+  
+  .marquee-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .marquee {
+    display: flex;
+    width: max-content;
+    animation: scrollMarquee 30s linear infinite;
+  }
+  
+  .marquee span {
+    white-space: nowrap;
+    padding-right: 100px; /* odstęp między kopiami */
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 400 !important;
+  }
+  
+  @keyframes scrollMarquee {
+    0% {
+      transform: translateX(0);
     }
-    to {
-      transform: rotateZ(360deg);
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+
+  .holographic-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    transition: all 0.5s ease;
+    /* NIE ustawiamy background ani rozmiaru — są dziedziczone z .card1 itd. */
+  }
+  
+  /* Holograficzny efekt */
+  .holographic-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      120deg,
+      transparent 40%,
+      #6a4b7c,
+      transparent 60%
+    );
+    transform: rotate(0deg);
+    transition: all 0.5s ease;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 3;
+  }
+  
+  .holographic-card:hover::before {
+    opacity: 1;
+    transform: rotate(45deg) translateY(100%);
+  }
+  
+  .holographic-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 20px#6a4b7c;
+  }
+  
+  /* Zawartość nad hologramem */
+  .holographic-card h3,
+  .holographic-card p,
+  .holographic-card a {
+    position: relative;
+    z-index: 4;
+  }
+  
+  .rotating-logo-container {
+    position: relative;
+    width: 170px;
+    height: 170px;
+    margin: 0 auto;
+  }
+  
+  .rotating-ring {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    animation: spin 20s linear infinite;
+    z-index: 1;
+  }
+  
+  .static-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
+  
+  /* Animacja obrotu */
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .service-card h3 {
+    color: white;
+    animation: fadeText 4s infinite;
+  }
+  
+  @keyframes fadeText {
+    0%, 100% {
+      color: white;
+    }
+    50% {
+      color: transparent; /* tekst znika */
     }
   }
   

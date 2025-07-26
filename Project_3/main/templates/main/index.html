@@ -24,31 +24,40 @@
         <source src="{% static 'main/video/pernament2.mp4'%}" type="video/mp4">
         Your browser does not support the video tag.
       </video>
-<div>
+
+    <div class="nav-top-elements">
+      <div>
+        
+      
       <div class="hamburger" id="hamburger" onmouseover="openMENU()" >
         <div class="line"></div>
         <div class="line"></div>
         <div class="line"></div>
       </div>
 
-      <div class="nav-icons">
-        <span class="icon" title="Calender">👜</span>
-        <span class="icon" title="User account">👤</span>
-
-      </div>
     </div>
 
-      <div class="logo-3d-wrapper">
-        <img src="{% static 'main/img/logo.png' %}" alt="Logo" class="logo-rotate-z" />
-      </div>
+    <div class="rotating-logo-container">
+      <img src="{% static 'main/img/logo_part1.png' %}" alt="Rotating Ring" class="rotating-ring">
+      <img src="{% static 'main/img/logo_part2.png' %}" alt="Static Center" class="static-center">
+    </div>
 
       <button class="book-btn">BOOK NOW</button>
+    </div>
+    <div class="marquee">
+      <span style="font-weight: bold;">
+        ••• New client? Use code NEW10 to receive 10% off your first visit! •••
+      </span>
+      <span style="font-weight: bold;">
+        ••• Existing client? Refer a friend with the code FRIEND15 to both receive 15% off your next treatment! •••
+      </span>
+    </div>
     </div>
 
     <nav class="nav-bottom" id="nav-bottom" onmouseleave="closeMENU()">
       <div class="nav-top1">
         <div id="hamburger2">
-          <img src="{% static 'main/img/logo.png' %}" alt="Logo" height="100px" />
+          <img src="{% static 'main/img/logo3.png' %}" alt="Logo" height="120px" />
         </div>
         <div class="hamburger cross" onclick="closeMENU()">
           <div class="line cross1"></div>
@@ -56,62 +65,159 @@
           <div class="line cross3"></div>
         </div>
       </div>
+
+      <dix>
+        <br>
+      </dix>
       
-      <a class="menu left first"  href="#">Welcome</a>
-      <a class="menu left" href="#">About Me</a>
-      <a class="menu left" href="#">Services</a>
-      <a class="menu left" href="#">Opinions</a>
-      <a class="menu left" href="#">Price List</a>
-      <a class="menu left" href="#">Blog</a>
-      <a class="menu left" href="#">Career</a>
-      <a class="menu left" href="#">Competitions</a>
-      <a class="menu left" href="#">Contact</a>
+      <a class="menu left first text-with-ellipse-line"  href="#">Welcome
+        <svg viewBox="0 0 200 20" preserveAspectRatio="none">
+          <path d="
+            M0,15 
+            Q15,0 30,15 
+            L170,15 
+            Q185,0 200,15" />
+        </svg>
+      </a>
+      <a class="menu left text-with-ellipse-line" href="#">About Me
+         <svg viewBox="0 0 200 20" preserveAspectRatio="none">
+      <path d="
+        M0,15 
+        Q15,0 30,15 
+        L170,15 
+        Q185,0 200,15" />
+    </svg>
+      </a>
+      <a class="menu left text-with-ellipse-line" href="#">Services
+         <svg viewBox="0 0 200 20" preserveAspectRatio="none">
+      <path d="
+        M0,15 
+        Q15,0 30,15 
+        L170,15 
+        Q185,0 200,15" />
+    </svg>
+      </a>
+      <a class="menu left text-with-ellipse-line" href="#">Opinions
+         <svg viewBox="0 0 200 20" preserveAspectRatio="none">
+      <path d="
+        M0,15 
+        Q15,0 30,15 
+        L170,15 
+        Q185,0 200,15" />
+    </svg>
+      </a>
+      <a class="menu left text-with-ellipse-line" href="#">Price List
+         <svg viewBox="0 0 200 20" preserveAspectRatio="none">
+      <path d="
+        M0,15 
+        Q15,0 30,15 
+        L170,15 
+        Q185,0 200,15" />
+    </svg>
+      </a>
+      <a class="menu left text-with-ellipse-line" href="#">Blog
+         <svg viewBox="0 0 200 20" preserveAspectRatio="none">
+      <path d="
+        M0,15 
+        Q15,0 30,15 
+        L170,15 
+        Q185,0 200,15" />
+    </svg>
+      </a>
+      <a class="menu left text-with-ellipse-line" href="#">Career
+         <svg viewBox="0 0 200 20" preserveAspectRatio="none">
+      <path d="
+        M0,15 
+        Q15,0 30,15 
+        L170,15 
+        Q185,0 200,15" />
+    </svg>
+      </a>
+      <a class="menu left text-with-ellipse-line" href="#">Competitions
+         <svg viewBox="0 0 200 20" preserveAspectRatio="none">
+      <path d="
+        M0,15 
+        Q15,0 30,15 
+        L170,15 
+        Q185,0 200,15" />
+    </svg>
+      </a>
+      <a class="menu left text-with-ellipse-line" href="#">Contact
+         <svg viewBox="0 0 200 20" preserveAspectRatio="none">
+      <path d="
+        M0,15 
+        Q15,0 30,15 
+        L170,15 
+        Q185,0 200,15" />
+    </svg>
+      </a>
     </nav>
+
   </header>
-  <div class="placeholder"></div>
-  <video autoplay muted loop playsinline id="background-video">
-    <source src="{% static 'main/video/video2.mp4' %}" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+  
+
   <!-- MAIN SERVICES SECTION -->
   <section class="main-section">
     
     <div class="left-photo box">
-        <div class="image-wrapper">
-          <img class="image_panel" src="{% static 'main/img/sandra_salon.png' %}" alt="This is me">
-          <div class="overlay-text-wrapper">
-            <p class="overlay-text">Discover your potential with me. I'm expert educator in eyelashes, aesthetic medicine and permanent makeup</p>
+      <div class="image-wrapper">
+        <img class="image_panel" src="{% static 'main/img/sandra_salon2.png' %}" alt="This is me">
+        <div class="overlay-text-wrapper">
+          <div class="marquee-container">
+            <div class="marquee">
+              <span style="font-weight: bold;">
+                ••• Discover your potential with me. I'm expert educator in eyelashes, aesthetic medicine and permanent makeup •••
+              </span>
+              <span style="font-weight: bold;">
+                ••• Discover your potential with me. I'm expert educator in eyelashes, aesthetic medicine and permanent makeup •••
+              </span>
+            </div>
           </div>
         </div>
+      </div>
     </div>
+    
 
     <div class="services-wrapper">
-      <!-- Usunąłem nagłówek usług -->
       <div class="services-grid">
-        
-        <div class="service-card card1">
-            <h3>Eyelashes</h3>
-            <p>Professional eyelash styling – extensions, volume, and lash lift.</p>
-            <a href="#">Find out more</a>
+    
+        <!-- HOLOGRAFICZNA KARTA -->
+        <div class="service-card card1 holographic-card">
+          <h3>Eyelashes</h3>
+          <p>Professional eyelash styling – extensions, volume, and lash lift.</p>
+          <a href="#" class="book-btn">Find out more</a>
         </div>
-
-        <div class="service-card card2">
+    
+        <div class="service-card card2 holographic-card">
           <h3>Training Courses</h3>
           <p>Professional certified lash and brow training for stylists.</p>
-          <a href="#">Find out more</a>
+          <a href="#" class="book-btn">Find out more</a>
         </div>
-
-        <div class="service-card card3">
+    
+        <div class="service-card card3 holographic-card">
           <h3>Permanent Makeup</h3>
-          <p>Brows, lips & eyeliner – subtle and long-lasting definition.</p>
-          <a href="#">See details</a>
+          <p>
+            Brows, lips & eyeliner – subtle and long-lasting definition.
+            <br><span style="display:inline-block; margin-top:10px; font-size:1.4rem; font-weight:bold; color:gold;">
+              Available soon
+            </span>
+          </p>
+          <a href="#" class="book-btn">See details</a>
         </div>
-
-        <div class="service-card card4">
+    
+        <div class="service-card card4 holographic-card">
           <h3>Aesthetic Treatments</h3>
-          <p>Modern skin treatments to improve glow and tone naturally.</p>
-          <a href="#">View offer</a>
+          <p>
+            Modern skin treatments to improve glow and tone naturally.
+            <br><span style="display:inline-block; margin-top:10px; font-size:1.4rem; font-weight:bold; color:gold;">
+              Available soon
+            </span>
+          </p>
+          <a href="#" class="book-btn">View offer</a>
         </div>
+    
+      </div>
+    </div>
       </div>
     </div>
 
@@ -124,26 +230,32 @@
     {% endfor %}
 </ul>
 
-<!-- Additional spacing to prevent content from overlapping the footer -->
-<div class="header-placeholder"></div>
 <!-- Footer section containing copyright and external contact links -->
 <footer id="footer" class="bg-dark text-light py-3">
     <div class="container d-flex justify-content-between align-items-center h-100">
         
         <!-- Dynamic year using JavaScript to keep content up-to-date -->
-        <p id="footer-text" class="mb-0">&copy; <span id="year"></span> VALERIA LONDON. All rights reserved.</p>
+        <p id="footer-text" class="mb-0">&copy; <span id="year"></span> VELORIA LONDON. All rights reserved.</p>
 
        <!-- Social media and contact icons for accessibility and client interaction -->
         <div class="footer-icons text-end">
-          <a class="hidden-link" target="_blank" href="https://www.facebook.com/profile.php?id=100083205698879">
-            <img class="footer-icon mx-2" src="{% static 'main/img/social.png' %}" alt="This is link to Facebook">
-        </a>
-        <a class="hidden-link" target="_blank" href="mailto:Marexlux@op.pl">
-            <img class="footer-icon mx-2" src="assets/icons/message.png" alt="This is link to Email">
-        </a>
-        <a class="hidden-link" target="_blank" href="tel:+48785384981">
-            <img class="footer-icon mx-2" src="assets/icons/phone.png" alt="This is our phone number">
-        </a>
+         
+            <a class="hidden-link" target="_blank" href="https://www.facebook.com/sandra.szczepaniak.3">
+                <img class="footer-icon mx-2" src="{% static 'main/img/social.png' %}" alt="This is link to Facebook">
+            </a>
+
+            <a class="hidden-link" target="_blank" href="https://www.instagram.com/sandraszczepaniak4/">
+              <img class="footer-icon mx-2" src="{% static 'main/img/instagram.png' %}" alt="This is our link to Instagram">
+            </a>
+
+            <a class="hidden-link" target="_blank" href="tel:+447539488172">
+            <img class="footer-icon mx-2" src="{% static 'main/img/phone.png' %}" alt="This is our phone number">
+            </a>
+
+            <a class="hidden-link" target="_blank" href="mailto:sandraszczepaniak4@gmail.com">
+                <img class="footer-icon mx-2" src="{% static 'main/img/message.png' %}" alt="This is link to Email">
+            </a>
+        
         </div>
     </div>
 </footer>
