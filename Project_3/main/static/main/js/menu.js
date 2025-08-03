@@ -9,3 +9,11 @@ function closeMENU() {
     const menu=document.getElementById("nav-bottom");
     menu.classList.remove("open");
 }
+
+function scrollToTop() {
+    window.scrollTo({
+    top: 0,
+    behavior: 'smooth' // płynne przewijanie
+    });
+  }
+

@@ -80,15 +80,15 @@ body {
 }
 
 .arow1 {
-  transform: rotate(0deg) translate(0, -20px);
+  transform: translate(-2px, 20px) rotate(0deg);
 }
 
 .arow2 {
-  transform: rotate(120deg) translate(0, -20px);
+  transform: translate(10px, -15px) rotate(60deg);
 }
 
 .arow3 {
-  transform: rotate(240deg) translate(0, -20px);
+  transform: translate(-12px, -33px) rotate(120deg);
 }
 
 #nav-bottom .left{
@@ -186,7 +186,7 @@ text-shadow: 1px 1px 2px #270049;
 
 
   .book-btn {
-    border: 2px solid gold !important; 
+    border: 2px solid gold; 
     background-color: #270049;
     color: white;
     padding: 10px 20px;
@@ -200,7 +200,7 @@ text-shadow: 1px 1px 2px #270049;
   .book-btn:hover {
     animation-play-state: paused;
     background-color: #cfa15a; /* złoto */
-    border-color: #cfa15a;
+    border-color: #6a4b7c;
     box-shadow: 0 0 15px 4px #cfa15aaa;
     transform: scale(1.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
@@ -492,22 +492,18 @@ header.top-nav {
    @keyframes colorShift {
     0% {
       background-color: #e98ca3; /* róż */
-      border-color: #e98ca3;
       box-shadow: 0 0 8px #cfa15a88; /* złoty cień */
     }
     33% {
       background-color: #6a4b7c; /* fiolet */
-      border-color: #6a4b7c;
       box-shadow: 0 0 8px #cfa15a88;
     }
     66% {
       background-color: #cfa15a; /* złoto */
-      border-color: #cfa15a;
       box-shadow: 0 0 12px #cfa15aaa;
     }
     100% {
       background-color: #e98ca3; /* róż */
-      border-color: #e98ca3;
       box-shadow: 0 0 8px #cfa15a88;
     }
   }
@@ -643,17 +639,20 @@ header.top-nav {
     border-radius: 50%;       /* koło */
     background-color: transparent;
     padding: 0px;             /* odstęp między ramką a obrazkiem */
-    display: inline-flex;     /* centrowanie zawartości */
     align-items: center;
     justify-content: center;
     cursor: pointer;
   }
+
+  .image-login:hover {
+    border-color:#6a4b7c
+  }
   
   .image-login img {
-    height: 47px;
-    width: 47px;
+    height: 45px;
+    width: 45px;
     border-radius: 50%;       /* zaokrąglone zdjęcie */
-    display: block;
+    display: inline-block;
   }
 
   .button-container {
@@ -673,7 +672,7 @@ header.top-nav {
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    box-shadow: 0 4px 6px gold
+    box-shadow: 0 4px 6px gold;
     font-size: 14px;
     transition: background-color 0.2s ease;
   }
