@@ -79,6 +79,18 @@ body {
     transform: rotate(-45deg) translate(20px, -20px);
 }
 
+.arow1 {
+  transform: rotate(0deg) translate(0, -20px);
+}
+
+.arow2 {
+  transform: rotate(120deg) translate(0, -20px);
+}
+
+.arow3 {
+  transform: rotate(240deg) translate(0, -20px);
+}
+
 #nav-bottom .left{
 color: #dd7cf0;
 font-size:x-large;
@@ -217,53 +229,6 @@ text-shadow: 1px 1px 2px #270049;
   .nav-bottom.open {
     transform: translateX(0);
   }
-
- /*/* Podkreślenie z eliptycznymi końcami pod linkami w menu *
- .nav-bottom a {
-  position: relative;
-  color: #6a4b7c;
-  font-weight: 600;
-  font-size: 0.95rem;
-  text-decoration: none;
-  padding-bottom: 14px;
-  transition: color 0.3s ease;
-  display: inline-block;
-}
-
-/* Pseudoelement z zaokrąglonymi końcami *
-.nav-bottom a::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 15%;
-  right: 15%;
-  height: 8px;
-  background-color: #ffc107;
-  border-top-left-radius: 999px;
-  border-top-right-radius: 999px;
-  transform: scaleX(0.6) translateY(4px);
-  opacity: 0;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  pointer-events: none;
-}
-
-/* Hover – podkreślenie pojawia się *
-.nav-bottom a:hover::after {
-  opacity: 1;
-  transform: scaleX(1) translateY(4px);
-}
-
-/* Hover – zmiana koloru tekstu *
-.nav-bottom a:hover {
-  color: gold;
-}
-
-/* Opcjonalnie – domyślne podkreślenie dla .first *
-.nav-bottom a.first::after {
-  opacity: 1;
-  transform: scaleX(1) translateY(4px);
-}*/
-
 
   /* === MAIN SECTION === */
   .main-section {
@@ -561,11 +526,12 @@ header.top-nav {
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: #6a4b7cb2; /* np. półprzezroczyste tło */
+    background-color: #6a4b7c; /* np. półprzezroczyste tło */
     padding: 10px 20px;
     border-bottom-left-radius: 16px;
     border-bottom-right-radius: 16px;
     overflow: hidden;
+    border: solid gold 2px;
   }
   
   .marquee-container {
@@ -671,14 +637,49 @@ header.top-nav {
     transform: translate(-50%, -50%);
     z-index: 2;
   }
-.image-login {
-  border-radius: 50%;
-  background-color: #6a4b7c00;
-  margin-right: 10px;
-}
+  .image-login {
+    margin-right: 10px;
+    border: 2px solid gold;   /* złota ramka */
+    border-radius: 50%;       /* koło */
+    background-color: transparent;
+    padding: 0px;             /* odstęp między ramką a obrazkiem */
+    display: inline-flex;     /* centrowanie zawartości */
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
   .image-login img {
-    height: 40px;
-    width: 40px;
+    height: 47px;
+    width: 47px;
+    border-radius: 50%;       /* zaokrąglone zdjęcie */
+    display: block;
+  }
+
+  .button-container {
+    position: fixed;
+    bottom: 7vh;
+    right: 20px;
+    display: flex;
+    flex-direction: column; /* ustawia jeden pod drugim */
+    gap: 10px; /* odstęp między przyciskami */
+    z-index: 1000; /* na wierzchu */
+  }
+
+  .floating-button {
+    padding: 10px 15px;
+    background-color: #6a4b7c;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px gold
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+  }
+
+  .floating-button:hover {
+    background-color: #0056b3;
   }
   
   /* Animacja obrotu */

@@ -44,7 +44,8 @@
 
     <div>
       <button class="image-login">
-        <img src="{% static 'main/img/login.png' %}" alt="Login"></button>
+        <img src="{% static 'main/img/login.png' %}" alt="Login">
+      </button>
 
       <button class="book-btn">BOOK NOW</button>
     </div>
@@ -75,10 +76,14 @@
         </div>
       </div>
 
-      <dix>
+      <div>
         <br>
-      </dix>
+      </div>
       
+      <div>
+        <br>
+      </div>
+     
       <a class="menu left first text-with-ellipse-line"  href="#">Welcome
         <svg viewBox="0 0 200 20" preserveAspectRatio="none">
           <path d="
@@ -160,6 +165,11 @@
         Q185,0 200,15" />
     </svg>
       </a>
+
+      <div>
+        <br>
+      </div>
+
     </nav>
 
   </header>
@@ -242,6 +252,15 @@
     {% endfor %}
 </ul>
 
+<div class="button-container">
+  <button class="floating-button">↑</button>
+  <div class="hamburger cross" onclick="closeMENU()">
+    <div class="line arow1"></div>
+    <div class="line arow2"></div>
+    <div class="line arow3"></div>
+  </div>
+
+</div>
 <!-- Footer section containing copyright and external contact links -->
 <footer id="footer" class="bg-dark text-light py-3">
     <div class="container d-flex justify-content-between align-items-center h-100">
