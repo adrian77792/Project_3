@@ -51,11 +51,13 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'Project_3.urls'
+LOGIN_REDIRECT_URL = '/'  # Gdzie przekierować po zalogowaniu
+LOGOUT_REDIRECT_URL = '/login/'  # Gdzie przekierować po wylogowaniu
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / "templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

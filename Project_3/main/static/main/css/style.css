@@ -164,7 +164,7 @@ text-shadow: 1px 1px 2px #270049;
 
   }
 
-  .card1, .card2, .card3, .card4 {
+  .card1, .card2, .card3, .card4, .card5 {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -190,6 +190,8 @@ text-shadow: 1px 1px 2px #270049;
     background-color: #270049;
     color: white;
     padding: 10px 20px;
+    height: auto !important;
+    margin: auto;
     font-weight: bold;
     border-radius: 25px;
     cursor: pointer;
@@ -207,6 +209,31 @@ text-shadow: 1px 1px 2px #270049;
     cursor: pointer;
   }
 
+  .book-btn2 {
+  background-color: #6a4b7c00;
+  padding: 3px 5px;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.6s ease-in-out;
+    }
+  .book-btn2:hover {
+    color: #6a4b7c46;
+  }
+.login_logout {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+margin-right: 10px;
+gap: 10px;
+}
+
+.login_logout2{
+  display: flex;
+  flex-direction: row;
+}
+  
   .nav-bottom {
     display: flex;
     justify-content: space-between;
@@ -634,7 +661,6 @@ header.top-nav {
     z-index: 2;
   }
   .image-login {
-    margin-right: 10px;
     border: 2px solid gold;   /* złota ramka */
     border-radius: 50%;       /* koło */
     background-color: transparent;

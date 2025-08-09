@@ -22,9 +22,9 @@ def services(request):
     subservice= SubService.objects.all()
     return render(request, 'main/services.html',{'services':services})
 
-def login(request):
-    login= Service.objects.all()
-    subservice= SubService.objects.all()
+def user_login(request):
+    #login= Service.objects.all()
+    #subservice= SubService.objects.all()
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
@@ -32,7 +32,7 @@ def login(request):
  
         if user is not None:
             login(request, user)
-            return redirect('main')  # Redirect to homepage or dashboard
+            return redirect('index.html')  # Redirect to homepage or dashboard
         else:
             messages.error(request, 'Invalid username or password.')
  

@@ -42,18 +42,28 @@
       <img src="{% static 'main/img/logo_part2.png' %}" alt="Static Center" class="static-center">
     </div>
 
-    <div>
-      <button class="image-login">
+    <div class="login_logout2">
+      <div class="login_logout">
+        {% if not user.is_authenticated %}
+      <button class="image-login" data-url="{% url 'login' %}" onclick="window.location.href=this.dataset.url;">
         <img src="{% static 'main/img/login.png' %}" alt="Login">
       </button>
+        {% endif %}
 
+      {% if user.is_authenticated %}
+      <form method="post" action="{% url 'logout' %}">
+          {% csrf_token %}
+          <button type="submit" class="book-btn">Log out</button>
+      </form>
+    {% endif %}
+      </div>
       <button class="book-btn">BOOK NOW</button>
-    </div>
 
     </div>
 
-    
+    </div>
 
+  
     <div class="marquee">
       <span style="font-weight: bold;">
         ••• New client? Use code NEW10 to receive 10% off your first visit! •••
@@ -84,87 +94,23 @@
         <br>
       </div>
      
-      <a class="menu left first text-with-ellipse-line"  href="#">Welcome
-        <svg viewBox="0 0 200 20" preserveAspectRatio="none">
-          <path d="
-            M0,15 
-            Q15,0 30,15 
-            L170,15 
-            Q185,0 200,15" />
-        </svg>
-      </a>
-      <a class="menu left text-with-ellipse-line" href="#">About Me
-         <svg viewBox="0 0 200 20" preserveAspectRatio="none">
-      <path d="
-        M0,15 
-        Q15,0 30,15 
-        L170,15 
-        Q185,0 200,15" />
-    </svg>
-      </a>
-      <a class="menu left text-with-ellipse-line" href="#">Services
-         <svg viewBox="0 0 200 20" preserveAspectRatio="none">
-      <path d="
-        M0,15 
-        Q15,0 30,15 
-        L170,15 
-        Q185,0 200,15" />
-    </svg>
-      </a>
-      <a class="menu left text-with-ellipse-line" href="#">Opinions
-         <svg viewBox="0 0 200 20" preserveAspectRatio="none">
-      <path d="
-        M0,15 
-        Q15,0 30,15 
-        L170,15 
-        Q185,0 200,15" />
-    </svg>
-      </a>
-      <a class="menu left text-with-ellipse-line" href="#">Price List
-         <svg viewBox="0 0 200 20" preserveAspectRatio="none">
-      <path d="
-        M0,15 
-        Q15,0 30,15 
-        L170,15 
-        Q185,0 200,15" />
-    </svg>
-      </a>
-      <a class="menu left text-with-ellipse-line" href="#">Blog
-         <svg viewBox="0 0 200 20" preserveAspectRatio="none">
-      <path d="
-        M0,15 
-        Q15,0 30,15 
-        L170,15 
-        Q185,0 200,15" />
-    </svg>
-      </a>
-      <a class="menu left text-with-ellipse-line" href="#">Career
-         <svg viewBox="0 0 200 20" preserveAspectRatio="none">
-      <path d="
-        M0,15 
-        Q15,0 30,15 
-        L170,15 
-        Q185,0 200,15" />
-    </svg>
-      </a>
-      <a class="menu left text-with-ellipse-line" href="#">Competitions
-         <svg viewBox="0 0 200 20" preserveAspectRatio="none">
-      <path d="
-        M0,15 
-        Q15,0 30,15 
-        L170,15 
-        Q185,0 200,15" />
-    </svg>
-      </a>
-      <a class="menu left text-with-ellipse-line" href="#">Contact
-         <svg viewBox="0 0 200 20" preserveAspectRatio="none">
-      <path d="
-        M0,15 
-        Q15,0 30,15 
-        L170,15 
-        Q185,0 200,15" />
-    </svg>
-      </a>
+      <a class="menu left first text-with-ellipse-line"  href="#">Welcome</a>
+
+      <a class="menu left text-with-ellipse-line" href="#">About Me</a>
+
+      <a class="menu left text-with-ellipse-line" href="#">Services</a>
+
+      <a class="menu left text-with-ellipse-line" href="#">Opinions</a>
+
+      <a class="menu left text-with-ellipse-line" href="#">Price List</a>
+
+      <a class="menu left text-with-ellipse-line" href="#">Blog</a>
+
+      <a class="menu left text-with-ellipse-line" href="#">Career</a>
+
+      <a class="menu left text-with-ellipse-line" href="#">Competitions</a>
+
+      <a class="menu left text-with-ellipse-line" href="#">Contact</a>
 
       <div>
         <br>
@@ -202,41 +148,17 @@
     <div class="services-wrapper">
       <div class="services-grid">
     
-        <!-- HOLOGRAFICZNA KARTA -->
-        <div class="service-card card1 holographic-card">
-          <h3>Eyelashes</h3>
-          <p>Professional eyelash styling – extensions, volume, and lash lift.</p>
-          <a href="#" class="book-btn">Find out more</a>
-        </div>
-    
-        <div class="service-card card2 holographic-card">
-          <h3>Training Courses</h3>
-          <p>Professional certified lash and brow training for stylists.</p>
-          <a href="#" class="book-btn">Find out more</a>
-        </div>
-    
-        <div class="service-card card3 holographic-card">
-          <h3>Permanent Makeup</h3>
-          <p>
-            Brows, lips & eyeliner – subtle and long-lasting definition.
-            <br><span style="display:inline-block; margin-top:10px; font-size:1.4rem; font-weight:bold; color:gold;">
-              Available soon
-            </span>
-          </p>
-          <a href="#" class="book-btn">See details</a>
-        </div>
-    
-        <div class="service-card card4 holographic-card">
-          <h3>Aesthetic Treatments</h3>
-          <p>
-            Modern skin treatments to improve glow and tone naturally.
-            <br><span style="display:inline-block; margin-top:10px; font-size:1.4rem; font-weight:bold; color:gold;">
-              Available soon
-            </span>
-          </p>
-          <a href="#" class="book-btn">View offer</a>
-        </div>
-    
+          {% for service in services %}
+          <div class="service-card card5 holographic-card" style="background-image: url('{{ service.file_path }}');">
+            <h3>{{ service.title }}</h3>
+            <p>
+              {{ service.description }}
+            </p>
+            <a href="#" class="book-btn">View offer</a>
+          </div>
+          {% empty %}
+          No services.
+          {% endfor %}
       </div>
     </div>
       </div>
@@ -245,11 +167,7 @@
   </section>
 </div>
 <ul>
-    {% for service in services %}
-        <li>{{ service.title }} ({{ service.created_at }})</li>
-    {% empty %}
-        <li>No services.</li>
-    {% endfor %}
+        <li></li>
 </ul>
 
 <div class="button-container">
