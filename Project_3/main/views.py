@@ -3,6 +3,7 @@ from django.contrib.auth import authenticate, login
 from django.contrib import messages
 from .models import Service
 from .models import SubService
+import datetime
 
 def services_list(request):
     services= Service.objects.all()
@@ -12,6 +13,21 @@ def services_list(request):
 def index(request):
     services= Service.objects.all()
     return render(request, 'main/index.html',{'services':services})
+
+def calendar(request):
+    services= Service.objects.all()
+    # Lista dni (np. Poniedziałek–Niedziela)
+    start_date = datetime.date.today()
+    week_days = [(start_date + datetime.timedelta(days=i)) for i in range(7)]
+
+    # Lista godzin np. od 8:00 do 18:00 co 1h
+    hours = [f"{h:02d}:00" for h in range(8, 19)]
+    return render(request, 'main/calendar.html',{'services':services, 'week_days': week_days,
+        'hours': hours})
+
+def reservation(request):
+    services= Service.objects.all()
+    return render(request, 'main/reservation.html',{'services':services})
 
 def resume(request):
     services= Service.objects.all()

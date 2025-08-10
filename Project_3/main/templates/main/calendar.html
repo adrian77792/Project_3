@@ -57,7 +57,7 @@
       </form>
     {% endif %}
       </div>
-      <a href="{% url 'calendar' %}" class="book-btn "> BOOK NOW</a>
+      <button class="book-btn">BOOK NOW</button>
 
     </div>
 
@@ -94,7 +94,7 @@
         <br>
       </div>
      
-      <a class="menu left first text-with-ellipse-line" href="{% url 'index' %}">Welcome</a>
+      <a class="menu left first text-with-ellipse-line"  href="#">Welcome</a>
 
       <a class="menu left text-with-ellipse-line" href="#">About Me</a>
 
@@ -119,50 +119,27 @@
     </nav>
 
   </header>
-  
 
-  <!-- MAIN SERVICES SECTION -->
-  <div class="main-section-wrapper">
+  <div class="calendar">
+    <!-- Pusta komórka w lewym górnym rogu -->
+    <div></div>
 
-  <section class="main-section">
-    
-    <div class="left-photo box">
-      <div class="image-wrapper">
-        <img class="image_panel" src="{% static 'main/img/sandra_salon2.png' %}" alt="This is me">
-        <div class="overlay-text-wrapper">
-          <div class="marquee-container">
-            <div class="marquee">
-              <span style="font-weight: bold;">
-                ••• Discover your potential with me. I'm expert educator in eyelashes, aesthetic medicine and permanent makeup •••
-              </span>
-              <span style="font-weight: bold;">
-                ••• Discover your potential with me. I'm expert educator in eyelashes, aesthetic medicine and permanent makeup •••
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    
+    <!-- Nagłówki dni -->
+    {% for day in week_days %}
+        <div class="calendar-header">{{ day|date:"D d.m" }}</div>
+    {% endfor %}
 
-    <div class="services-wrapper">
-      <div class="services-grid">
-    
-          {% for service in services %}
-          <div class="service-card card5 holographic-card" style="background-image: url('{{ service.file_path }}');">
-            <h3>{{ service.title }}</h3>
-            <p>
-              {{ service.description }}
-            </p>
-            <a href="#" class="book-btn">View offer</a>
-          </div>
-          {% empty %}
-          No services.
-          {% endfor %}
-      </div>
-    </div>
-      </div>
-    </div>
+    <!-- Godziny i pola -->
+    {% for hour in hours %}
+        <!-- Godzina w pierwszej kolumnie -->
+        <div class="calendar-time">{{ hour }}</div>
+
+        <!-- Puste pola na każdy dzień tygodnia -->
+        {% for day in week_days %}
+            <div class="calendar-cell"></div>
+        {% endfor %}
+    {% endfor %}
+</div>
 
   </section>
 </div>

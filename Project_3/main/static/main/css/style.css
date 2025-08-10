@@ -197,6 +197,7 @@ text-shadow: 1px 1px 2px #270049;
     cursor: pointer;
     animation: colorShift 6s infinite;
     transition: none;
+    text-decoration: none;
   }
 
   .book-btn:hover {
@@ -730,4 +731,99 @@ header.top-nav {
       color: transparent; /* tekst znika */
     }
   }
+
+  .calendar {
+    display: grid;
+    grid-template-columns: 80px repeat(7, 1fr);
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.calendar-header {
+    background: #f0f0f0;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+}
+
+.calendar-time {
+    background: #fafafa;
+    text-align: right;
+    padding: 8px;
+    border-right: 1px solid #ccc;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.calendar-cell {
+    border-bottom: 1px solid #eee;
+    border-right: 1px solid #eee;
+    padding: 8px;
+    min-height: 40px;
+    cursor: pointer;
+}
+
+.calendar-cell:hover {
+    background: #e8f4ff;
+}
+
+.calendar-day {
+    background: #f8f8f8;
+    text-align: center;
+    padding: 8px;
+    font-weight: bold;
+    border-right: 1px solid #ccc;
+}
+
+form {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #333;
+}
+
+select, input[type="date"], input[type="time"] {
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+select:focus, input[type="date"]:focus, input[type="time"]:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 10px 0;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
   

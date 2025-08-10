@@ -4,6 +4,7 @@ class Service(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField(blank=True)
     file_path = models.CharField(max_length=500)
+    time = models.IntegerField(null=True, blank=True)
 
     def __str__(self):
         return self.title
