@@ -1,3 +1,4 @@
+from django.http import JsonResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
@@ -53,3 +54,20 @@ def user_login(request):
             messages.error(request, 'Invalid username or password.')
  
     return render(request, 'login.html')
+
+def chat_bot_view(request):
+    user_message = request.GET.get("message", "").lower()
+
+    # Proste warunki
+
+    if "hello" in user_message:
+        reply = "Hi there! How can I help you?"
+    elif "bye" in user_message:
+        reply = "Goodbye! Have a great day!"
+    else:
+        reply = f"You said: {user_message}"
+
+    return JsonResponse({"reply": reply})
+
+def chat_bot_page(request):
+    return render(request, 'main/chatbot.html')

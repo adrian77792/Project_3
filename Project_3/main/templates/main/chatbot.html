@@ -55,14 +55,9 @@
           {% csrf_token %}
           <button type="submit" class="book-btn">Log out</button>
       </form>
-
-      <button type="submit" class="image-logout">
-        <img src="{% static 'main/img/log_out.png' %}" alt="Log out" width="50" height="50">
-    </button>
-
     {% endif %}
       </div>
-      <a href="{% url 'calendar' %}" class="book-btn "> BOOK NOW</a>
+      <button class="book-btn">BOOK NOW</button>
 
     </div>
 
@@ -99,7 +94,7 @@
         <br>
       </div>
      
-      <a class="menu left first text-with-ellipse-line" href="{% url 'index' %}">Welcome</a>
+      <a class="menu left first text-with-ellipse-line"  href="#">Welcome</a>
 
       <a class="menu left text-with-ellipse-line" href="#">About Me</a>
 
@@ -124,52 +119,18 @@
     </nav>
 
   </header>
-  
+  <!-- Ikona czatu -->
+<div id="chat-icon">💬</div>
+ 
+<!-- Okno czatu -->
+<div id="chat-window">
+<div id="chat-messages"></div>
+<div id="chat-input">
+<input type="text" id="message" placeholder="Type a message...">
+<button id="send-btn">Send</button>
+</div>
+</div>
 
-  <!-- MAIN SERVICES SECTION -->
-  <div class="main-section-wrapper">
-
-  <section class="main-section">
-    
-    <div class="left-photo box">
-      <div class="image-wrapper">
-        <img class="image_panel" src="{% static 'main/img/sandra_salon2.png' %}" alt="This is me">
-        <div class="overlay-text-wrapper">
-          <div class="marquee-container">
-            <div class="marquee">
-              <span style="font-weight: bold;">
-                ••• Discover your potential with me. I'm expert educator in eyelashes, aesthetic medicine and permanent makeup •••
-              </span>
-              <span style="font-weight: bold;">
-                ••• Discover your potential with me. I'm expert educator in eyelashes, aesthetic medicine and permanent makeup •••
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-
-    <div class="services-wrapper">
-      <div class="services-grid">
-    
-          {% for service in services %}
-          <div class="service-card card5 holographic-card" style="background-image: url('{{ service.file_path }}');">
-            <h3>{{ service.title }}</h3>
-            <p>
-              {{ service.description }}
-            </p>
-            <a href="#" class="book-btn">View offer</a>
-          </div>
-          {% empty %}
-          No services.
-          {% endfor %}
-      </div>
-    </div>
-      </div>
-    </div>
-
-  </section>
 </div>
 <ul>
         <li></li>
@@ -215,5 +176,51 @@
 </footer>
 <script src="{% static 'main/js/column.js' %}"></script>
 <script src="{% static 'main/js/menu.js' %}"></script>
+<script>
+  const chatIcon = document.getElementById("chat-icon");
+  const chatWindow = document.getElementById("chat-window");
+  const sendBtn = document.getElementById("send-btn");
+  const messageInput = document.getElementById("message");
+  const chatMessages = document.getElementById("chat-messages");
+
+  // Otwieranie/zamykanie czatu
+  chatIcon.addEventListener("click", () => {
+      chatWindow.style.display = (chatWindow.style.display === "none" || chatWindow.style.display === "") 
+          ? "flex" : "none";
+  });
+
+  // Wysyłanie wiadomości
+  sendBtn.addEventListener("click", sendMessage);
+  messageInput.addEventListener("keypress", e => {
+      if (e.key === "Enter") sendMessage();
+  });
+
+  function sendMessage() {
+      const message = messageInput.value.trim();
+      if (!message) return;
+
+      // Dodaj wiadomość użytkownika
+      addMessage("You", message, "user");
+      messageInput.value = "";
+
+      // Wysyłanie do backendu Django
+      fetch(`/chatbot/?message=${encodeURIComponent(message)}`)
+          .then(res => res.json())
+          .then(data => {
+              addMessage("Bot", data.reply, "bot");
+          })
+          .catch(() => {
+              addMessage("Bot", "Error: could not connect to server", "bot");
+          });
+  }
+
+  function addMessage(sender, text, type) {
+      const msg = document.createElement("div");
+      msg.classList.add("message", type);
+      msg.innerHTML = `<strong>${sender}:</strong> ${text}`;
+      chatMessages.appendChild(msg);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+</script>
 </body>
 </html>
