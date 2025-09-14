@@ -13,114 +13,12 @@
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
-{% load static %}
+{% include "partials/header.html" %}
 
- <!-- HEADER MENU -->
- <header class="top-nav">
-  
-    <div class="nav-top">
-
-      <video autoplay muted loop playsinline id="background-video">
-        <source src="{% static 'main/video/pernament2.mp4'%}" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-
-    <div class="nav-top-elements">
-      <div>
-        
-      
-      <div class="hamburger" id="hamburger" onmouseover="openMENU()" >
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-      </div>
-
-    </div>
-
-    <div class="rotating-logo-container">
-      <img src="{% static 'main/img/logo_part1.png' %}" alt="Rotating Ring" class="rotating-ring">
-      <img src="{% static 'main/img/logo_part2.png' %}" alt="Static Center" class="static-center">
-    </div>
-
-    <div class="login_logout2">
-      <div class="login_logout">
-        {% if not user.is_authenticated %}
-      <button class="image-login" data-url="{% url 'login' %}" onclick="window.location.href=this.dataset.url;">
-        <img src="{% static 'main/img/login.png' %}" alt="Login">
-      </button>
-        {% endif %}
-
-      {% if user.is_authenticated %}
-      <form method="post" action="{% url 'logout' %}">
-          {% csrf_token %}
-          <button type="submit" class="book-btn">Log out</button>
-      </form>
-    {% endif %}
-      </div>
-      <button class="book-btn">BOOK NOW</button>
-
-    </div>
-
-    </div>
-
-  
-    <div class="marquee">
-      <span style="font-weight: bold;">
-        ••• New client? Use code NEW10 to receive 10% off your first visit! •••
-      </span>
-      <span style="font-weight: bold;">
-        ••• Existing client? Refer a friend with the code FRIEND15 to both receive 15% off your next treatment! •••
-      </span>
-    </div>
-    </div>
-
-    <nav class="nav-bottom" id="nav-bottom" onmouseleave="closeMENU()">
-      <div class="nav-top1">
-        <div id="hamburger2">
-          <img src="{% static 'main/img/logo3.png' %}" alt="Logo" height="120px" />
-        </div>
-        <div class="hamburger cross" onclick="closeMENU()">
-          <div class="line cross1"></div>
-          <div class="line cross2"></div>
-          <div class="line cross3"></div>
-        </div>
-      </div>
-
-      <div>
-        <br>
-      </div>
-      
-      <div>
-        <br>
-      </div>
-     
-      <a class="menu left first text-with-ellipse-line"  href="#">Welcome</a>
-
-      <a class="menu left text-with-ellipse-line" href="#">About Me</a>
-
-      <a class="menu left text-with-ellipse-line" href="#">Services</a>
-
-      <a class="menu left text-with-ellipse-line" href="#">Opinions</a>
-
-      <a class="menu left text-with-ellipse-line" href="#">Price List</a>
-
-      <a class="menu left text-with-ellipse-line" href="#">Blog</a>
-
-      <a class="menu left text-with-ellipse-line" href="#">Career</a>
-
-      <a class="menu left text-with-ellipse-line" href="#">Competitions</a>
-
-      <a class="menu left text-with-ellipse-line" href="#">Contact</a>
-
-      <div>
-        <br>
-      </div>
-
-    </nav>
-
-  </header>
   <!-- Ikona czatu -->
-<div id="chat-icon">💬</div>
+<div id="chat-icon">
+  <img class="chat_image" src="{% static 'main/img/chatbot.png' %}" alt="This is our link to chatbot"> 
+</div>
  
 <!-- Okno czatu -->
 <div id="chat-window">
@@ -145,35 +43,9 @@
   </div>
 
 </div>
-<!-- Footer section containing copyright and external contact links -->
-<footer id="footer" class="bg-dark text-light py-3">
-    <div class="container d-flex justify-content-between align-items-center h-100">
-        
-        <!-- Dynamic year using JavaScript to keep content up-to-date -->
-        <p id="footer-text" class="mb-0">&copy; <span id="year"></span> VELORIA LONDON. All rights reserved.</p>
 
-       <!-- Social media and contact icons for accessibility and client interaction -->
-        <div class="footer-icons text-end">
-         
-            <a class="hidden-link" target="_blank" href="https://www.facebook.com/sandra.szczepaniak.3">
-                <img class="footer-icon mx-2" src="{% static 'main/img/social.png' %}" alt="This is link to Facebook">
-            </a>
+{% include "partials/footer.html" %}
 
-            <a class="hidden-link" target="_blank" href="https://www.instagram.com/sandraszczepaniak4/">
-              <img class="footer-icon mx-2" src="{% static 'main/img/instagram.png' %}" alt="This is our link to Instagram">
-            </a>
-
-            <a class="hidden-link" target="_blank" href="tel:+447539488172">
-            <img class="footer-icon mx-2" src="{% static 'main/img/phone.png' %}" alt="This is our phone number">
-            </a>
-
-            <a class="hidden-link" target="_blank" href="mailto:sandraszczepaniak4@gmail.com">
-                <img class="footer-icon mx-2" src="{% static 'main/img/message.png' %}" alt="This is link to Email">
-            </a>
-        
-        </div>
-    </div>
-</footer>
 <script src="{% static 'main/js/column.js' %}"></script>
 <script src="{% static 'main/js/menu.js' %}"></script>
 <script>

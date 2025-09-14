@@ -15,10 +15,23 @@ class SubService(models.Model):
     price = models.DecimalField(max_digits=6, decimal_places=2)
     description = models.TextField(blank=True)
     photo = models.URLField(blank=True)
-    duration = models.IntegerField(help_text="Time Duration in Minutes")
+    duration = models.IntegerField(help_text="Time Duration in hours")
 
     def __str__(self):    
         return f"{self.title} ({self.service.title})"
+    
+class Reservation(models.Model):
+    service = models.ForeignKey(
+        'Service',           # nazwa modelu usług
+        on_delete=models.CASCADE,
+        related_name='reservations'
+    )
+    date = models.DateField()
+    time = models.TimeField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def str(self):
+        return f"{self.service.name} - {self.date} {self.time}"
     
     
    
