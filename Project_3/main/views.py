@@ -5,7 +5,9 @@ from django.contrib import messages
 from .models import Service, Reservation
 from .models import SubService
 from collections import OrderedDict
+from twilio.rest import Client
 import datetime
+import json
 
 def services_list(request):
     services= Service.objects.all()
@@ -81,6 +83,28 @@ def calendar_view(request):
         "table": table
     })
 
+def twillo_send(message):
+    try:
+        # Dane z panelu Twilio
+       with open("config.json") as f:
+        config = json.load(f)
+
+        account_sid = config["ACCOUNT_SID"]
+        auth_token = config["AUTH_TOKEN"]
+        twilio_number = config["TWILIO_NUMBER"]
+        to_number = config["TO_NUMBER"]
+        
+        client = Client(account_sid, auth_token)
+        
+        sms = client.messages.create(
+            body=message,
+            from_=twilio_number,
+            to=to_number
+        )
+        print(f"SMS wysłany! SID: {sms.sid}")
+    except Exception as e:
+            print("Błąd:", e)
+
 def reservation(request):
     services= Service.objects.all()
     selected_date = request.GET.get("date")  # np. '2025-09-17'
@@ -99,6 +123,7 @@ def reservation(request):
             date=date,
             time=time_obj
         )
+        twillo_send("New Reservation " +str(date))
         return redirect("calendar")
     return render(request, 'main/reservation.html',{'services':services, 'hours':hours, "selected_date": selected_date,
         "selected_hour": selected_hour,})
