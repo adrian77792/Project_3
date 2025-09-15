@@ -105,4 +105,11 @@ Benefit from a simple, mobile-friendly interface that streamlines booking, accou
 
 - Responsive layout: Optimized for smooth use on desktops, tablets, and mobile devices, ensuring a consistent experience for all visitors.
 
+### 📷 Wireframe Desktop Preview:
+![AmIResponsive](readme/page01.png)
+![AmIResponsive](readme/page02.png)
+![AmIResponsive](readme/page03.png)
+![AmIResponsive](readme/page04.png)
+![AmIResponsive](readme/page05.png)
+
 
