@@ -317,3 +317,15 @@ Now you're all set! 🚀
 - Devices: Windows 11 Desktop (1920x1080), Android Smartphones (Pixel 5, Samsung Galaxy S10/A54), iPhone 13, iPad Mini
 - Validators: Nu HTML Checker, W3C CSS Validator
 ---
+
+### 📋 Test Scenarios
+
+#### 1. 📱 Responsiveness
+- **Steps**:
+  - Opening the website on various devices and screen sizes.
+  - Resizing browser windows and rotating mobile devices.
+- **Expected Result**:
+  - No content overflow; layout adapts gracefully; menu and buttons remain accessible.
+✅ Passed
+
+---
