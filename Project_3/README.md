@@ -260,3 +260,44 @@ Action Buttons – Options to confirm the booking or save the selection for late
 
 - **Python & Django** – Backend development, server-side logic, and database management
 
+## 🌍 Deployment
+
+This project is deployed using **GitHub Pages**, a free hosting service for static websites provided by GitHub.
+
+To deploy your site, follow these steps:
+
+1. **Prepare your repository**: Make sure your project contains the main files like `index.html`, `style.css`, etc. If you haven’t created a GitHub repository yet, you can initialize one and push your code using the following commands:
+
+   ```bash
+   git init
+   git add .
+   git commit -m "Initial commit"
+   git branch -M main
+   git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
+   git push -u origin main
+   ```
+
+2. **Enable GitHub Pages**:  
+   - Go to your repository on GitHub.  
+   - Click on **Settings**.  
+   - From the left-hand menu, select **Pages**.  
+   - Under **Source**, choose the `main` branch and the `/ (root)` folder.  
+   - Click **Save**.
+
+3. **Access your live website**:  
+   After a few seconds, GitHub will generate a public URL for your website. It typically looks like:  
+   ```
+   https://your-username.github.io/your-repository/
+   ```
+   Example:  
+   ```
+   https://adrian77792.github.io/Project2/
+   ```
+
+To clone this repository to your local machine, use:
+
+```bash
+git clone https://github.com/adrian77792/Project2.git
+```
+
+Now you're all set! 🚀
