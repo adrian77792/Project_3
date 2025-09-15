@@ -40,3 +40,27 @@ Comprehensive Documentation
 A detailed README.md explains the project’s purpose, setup, technologies, and user value, making it clear for future developers and stakeholders.
 
 ---
+
+## 📌 Table of Contents
+- [Introduction](#-introduction)
+- [User Experience (UX)](#-user-experience-ux)
+  - [Target Audience](#-target-audience)
+  - [User Goals](#-user-goals)
+  - [Design](#️-design)
+  - [Wireframe Desktop](#-wireframe-desktop-preview)
+  - [Wireframe Mobile](#-wireframe-mobile-preview)
+  - [Color Scheme](#-color-scheme)
+- [Features](#-features)
+  - [Home Page](#-home-page)
+  - [Services](#️-services)
+  - [Construction Calculator](#-construction-calculator)
+  - [About Us](#-about-us)
+  - [Contact](#-contact)
+- [Planned Features](#-planned-features)
+- [Technologies Used](#️-technologies-used)
+- [Deployment](#-deployment)
+- [Testing](#-testing)
+- [Credits](#-credits)
+- [Acknowledgments](#-acknowledgments)
+
+---
