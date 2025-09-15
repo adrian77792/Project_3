@@ -180,3 +180,31 @@ I will introduce testing to ensure website reliability and prevent bugs in produ
 
 📄 Headless CMS Integration
 I will connect the site to a content management system (e.g., Strapi, Netlify CMS) to easily update services, training courses, and promotional content.
+
+### 🏠 Home Page
+
+![AmIResponsive](readme/welcome.jpg)
+
+The home page of Veloria London presents a luxurious beauty and aesthetic studio with a clean, modern layout designed to highlight services and engage clients.
+
+- **Header:** At the top, the header features the studio logo centered, a hamburger menu on the left, and a user login icon plus a gold “BOOK NOW” button on the right for easy appointment access. A scrolling marquee promotes offers for new and existing clients.
+
+- **Hero Section:** A large hero image of Sandra Szczepaniak, Luxury Eye Trainer, is positioned on the left. Text overlay introduces her specialties: eyelashes, aesthetic medicine, and permanent makeup.
+
+- **Services Navigation:** To the right, four service cards highlight key offerings:
+
+- Eyelashes
+
+- Training Courses
+
+- Permanent Makeup
+
+- Aesthetic Treatments
+
+- Each card features a preview image, a purple header, and a golden-bordered “View Offer” button for interactive engagement.
+
+- **Company Description:** A brief introduction emphasizes the studio’s professionalism, luxury aesthetic, and client-focused approach, reinforcing trust and brand identity.
+
+- **Footer:** Minimalist footer includes copyright information (“© Veloria London”), social media icons (Facebook, Instagram), and contact links (phone and email).
+
+- **UX Highlights:** High-contrast text ensures readability, hover effects and animated buttons enhance interaction, and the overall design balances elegance with functional navigation to make booking services easy.
