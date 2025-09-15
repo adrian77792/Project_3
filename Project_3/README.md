@@ -360,3 +360,23 @@ Expected Result: Layout and behavior consistent across all browsers.
 ✅ **Final Status**: No validation errors after fixes.
 
 ---
+
+### 🔥 Issues Identified and Solutions
+
+| # | Issue | Type | Recommendation | Status |
+|:-:|:-----|:----:|:---------------|:------:|
+| 1 | `<title>` inside `<body>` | HTML Structure Error | Move to `<head>` section. | ✅ Fixed |
+| 2 | `<style>` inside `<body>` | HTML Structure Error | Move to `<head>` section. | ✅ Fixed |
+| 3 | CSS parse error (`ap`) | CSS Syntax Error | Correct or remove invalid rule. | ✅ Fixed |
+| 4 | Spaces in filenames (e.g., `Adrian Szmajewski.css`) | URL Issue | Encode spaces (`%20`) or replace with underscores (`_`). | ✅ Fixed |
+
+
+### 🏁 Final Testing Summary 
+
+- ✅ Responsiveness – Verified across mobile, tablet, and desktop devices.
+- ✅ Cross-browser compatibility – Confirmed on Chrome, Firefox, Edge, and Safari.
+- ✅ Navigation usability – Smooth scrolling and intuitive navigation throughout the site.
+- ✅ Form validation – Correct handling of valid/invalid inputs with appropriate feedback.
+- ✅ Accessibility – Checked alt tags, semantic HTML structure, and color contrasts.
+- ✅ HTML & CSS validation – No critical issues detected after W3C validation.
+- ✅ Performance – Optimized image loading and external scripts (Bootstrap via CDN).
