@@ -418,3 +418,8 @@ The project meets modern web development standards in terms of design, performan
 - Consistent spacing and alignment
 - Mobile-first responsiveness across all devices
 - Modern UI with minimal custom CSS overrides
+
+### Icons & Fonts
+- Google Fonts for typography customization.
+- Custom icons (PNG/SVG) for social media and contact links.
+- Additional enhancements inspired by Font Awesome styling patterns.
