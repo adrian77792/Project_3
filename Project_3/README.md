@@ -337,5 +337,10 @@ Steps: Open website in Chrome, Firefox, Edge, and Safari; compare layouts, fonts
 Expected Result: Layout and behavior consistent across all browsers.
  ✅ Passed
 
+---
 
+#### 3. 🧭 Navigation Usability
+-  Steps: Test all navigation links, anchors, buttons, and interactive elements.
+- Expected Result: Smooth scrolling; all links functional; no broken elements.
+ ✅ Passed
 ---
