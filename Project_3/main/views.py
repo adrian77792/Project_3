@@ -6,6 +6,7 @@ from .models import Service, Reservation
 from .models import SubService
 from collections import OrderedDict
 from twilio.rest import Client
+from django.contrib.auth.decorators import login_required
 import datetime
 import json
 
@@ -105,6 +106,7 @@ def twillo_send(message):
     except Exception as e:
             print("Błąd:", e)
 
+@login_required(login_url='login')
 def reservation(request):
     services= Service.objects.all()
     selected_date = request.GET.get("date")  # np. '2025-09-17'
@@ -119,10 +121,11 @@ def reservation(request):
 
         service = Service.objects.get(id=service_id)
         Reservation.objects.create(
-            service=service,
-            date=date,
-            time=time_obj
-        )
+                user=request.user, 
+                service=service,
+                date=date,
+                time=time_obj
+            )
         twillo_send("New Reservation " +str(date))
         return redirect("calendar")
     return render(request, 'main/reservation.html',{'services':services, 'hours':hours, "selected_date": selected_date,

@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 class Service(models.Model):
     title = models.CharField(max_length=200)
@@ -21,6 +22,12 @@ class SubService(models.Model):
         return f"{self.title} ({self.service.title})"
     
 class Reservation(models.Model):
+    user = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        related_name='reservations',
+        default=1
+    )
     service = models.ForeignKey(
         'Service',           # nazwa modelu usług
         on_delete=models.CASCADE,
