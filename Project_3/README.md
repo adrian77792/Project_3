@@ -344,3 +344,7 @@ Expected Result: Layout and behavior consistent across all browsers.
 - Expected Result: Smooth scrolling; all links functional; no broken elements.
  ✅ Passed
 ---
+
+#### 4. 🧹 HTML & CSS Validation 
+- Steps: Validate pages using Nu HTML Checker and W3C CSS Validator.
+- Expected Result:No critical errors in HTML or CSS.
