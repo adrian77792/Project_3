@@ -406,3 +406,7 @@ The project meets modern web development standards in terms of design, performan
 ### Main Container 
 - Home page is built inside a main container holding partials.
 - Enhances readability and ensures a modular structure.
+
+### Footer and Header as Partials
+- Both footer and header are created as partial templates.
+- Reused throughout the project → improves consistency and scalability.
