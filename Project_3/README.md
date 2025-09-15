@@ -329,3 +329,13 @@ Now you're all set! 🚀
 ✅ Passed
 
 ---
+
+#### 2. 🌐 Cross-browser Compatibility 
+Steps: Open website in Chrome, Firefox, Edge, and Safari; compare layouts, fonts, animations, and interactions.
+
+
+Expected Result: Layout and behavior consistent across all browsers.
+ ✅ Passed
+
+
+---
