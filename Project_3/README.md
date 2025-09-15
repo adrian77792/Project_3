@@ -93,3 +93,16 @@ Explore available training courses, learn about collaboration opportunities, and
 -**All users:**
 Benefit from a simple, mobile-friendly interface that streamlines booking, account management, and communication with the salon.
 
+### 🖌️ Design
+
+- The design focuses on a stylish and user-friendly experience tailored to a modern beauty salon:
+
+- Elegant and contemporary look: A clean, welcoming layout that showcases beauty services such as permanent makeup, eyelash styling, aesthetic treatments, and training offers.
+
+- Simple and intuitive navigation: A fixed navigation bar with direct links to essential sections like “Welcome,” “About Me,” “Services,” “Opinions,” “Price List,” “Blog,” “Career,” “Competitions,” and “Contact.”
+
+- Integrated booking and user panel: Clear call-to-action buttons and well-placed forms guiding users to book appointments, register, or log in seamlessly.
+
+- Responsive layout: Optimized for smooth use on desktops, tablets, and mobile devices, ensuring a consistent experience for all visitors.
+
+
