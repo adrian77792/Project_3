@@ -427,3 +427,13 @@ The project meets modern web development standards in terms of design, performan
 ### Inspiration & Resources
 - Various online tutorials and tech communities contributed to layout ideas and responsive design improvements.
 ---
+
+## 🙌 Acknowledgments 
+
+- *Code Institute*: Provided essential resources and guidance that were fundamental in developing the project.
+
+- *Slack Community*: Offered invaluable support and feedback throughout the development process.
+
+- *New City College – Andre Beckley*: Provided crucial support in correctly completing the project and offered valuable guidance on the documentation, which plays an essential role in the overall success of the project.
+
+📌 *© VELORIA LONDON - All rights reserved.*
