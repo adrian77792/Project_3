@@ -423,3 +423,7 @@ The project meets modern web development standards in terms of design, performan
 - Google Fonts for typography customization.
 - Custom icons (PNG/SVG) for social media and contact links.
 - Additional enhancements inspired by Font Awesome styling patterns.
+
+### Inspiration & Resources
+- Various online tutorials and tech communities contributed to layout ideas and responsive design improvements.
+---
