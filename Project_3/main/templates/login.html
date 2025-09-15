@@ -20,20 +20,37 @@
   <div class="main-section-wrapper">
 
   <section class="main-section">
-    <h1>LOGIN</h1>
-    {% if messages %}         
-        {% for message in messages %}             
-            <p style="color: red;">{{ message }}</p>         
-        {% endfor %}     
-    {% endif %}
-    <form method='post'>
-        {% csrf_token %}         
-        <label for="username">Username:</label>         
-        <input type="text" name="username" required><br><br>         
-        <label for="password">Password:</label>         
-        <input type="password" name="password" required><br><br>         
-        <button type="submit">Login</button>
-    </form> 
+    {% if messages %}
+    {% for message in messages %}
+        <p style="color:red">{{ message }}</p>
+    {% endfor %}
+{% endif %}
+
+<h2>Login</h2>
+<form method="post" style="margin-bottom:30px; max-width:300px;">
+    {% csrf_token %}
+    <input type="hidden" name="action" value="login">
+    <label style="display:block; margin-top:10px; font-weight:bold;">Username:</label>
+    <input type="text" name="username" required style="width:100%; padding:5px; margin-top:5px;"><br>
+    <label style="display:block; margin-top:10px; font-weight:bold;">Password:</label>
+    <input type="password" name="password" required style="width:100%; padding:5px; margin-top:5px;"><br>
+    <button type="submit" style="margin-top:15px; padding:8px 12px;">Login</button>
+</form>
+
+<h2>Register</h2>
+<form method="post" style="margin-bottom:30px; max-width:300px;">
+    {% csrf_token %}
+    <input type="hidden" name="action" value="register">
+    <label style="display:block; margin-top:10px; font-weight:bold;">Username:</label>
+    <input type="text" name="username" required style="width:100%; padding:5px; margin-top:5px;"><br>
+    <label style="display:block; margin-top:10px; font-weight:bold;">Email:</label>
+    <input type="email" name="email" required style="width:100%; padding:5px; margin-top:5px;"><br>
+    <label style="display:block; margin-top:10px; font-weight:bold;">Password:</label>
+    <input type="password" name="password1" required style="width:100%; padding:5px; margin-top:5px;"><br>
+    <label style="display:block; margin-top:10px; font-weight:bold;">Confirm Password:</label>
+    <input type="password" name="password2" required style="width:100%; padding:5px; margin-top:5px;"><br>
+    <button type="submit" style="margin-top:15px; padding:8px 12px;">Register</button>
+</form>
   
   </section>
 </div>

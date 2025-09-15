@@ -7,6 +7,7 @@ from .models import SubService
 from collections import OrderedDict
 from twilio.rest import Client
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 import datetime
 import json
 
@@ -141,20 +142,30 @@ def services(request):
     return render(request, 'main/services.html',{'services':services})
 
 def user_login(request):
-    #login= Service.objects.all()
-    #subservice= SubService.objects.all()
     if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
-        user = authenticate(request, username=username, password=password)
- 
-        if user is not None:
-            login(request, user)
-            return redirect('index.html')  # Redirect to homepage or dashboard
-        else:
-            messages.error(request, 'Invalid username or password.')
- 
-    return render(request, 'login.html')
+        action = request.POST.get('action')  # rozróżniamy formularze
+        if action == 'login':
+            username = request.POST['username']
+            password = request.POST['password']
+            user = authenticate(request, username=username, password=password)
+            if user:
+                login(request, user)
+                return redirect('index')
+            else:
+                messages.error(request, 'Invalid username or password.')
+        elif action == 'register':
+            username = request.POST['username']
+            email = request.POST['email']
+            password1 = request.POST['password1']
+            password2 = request.POST['password2']
+            if password1 != password2:
+                messages.error(request, 'Passwords do not match.')
+            elif User.objects.filter(username=username).exists():
+                messages.error(request, 'Username already taken.')
+            else:
+                User.objects.create_user(username=username, email=email, password=password1)
+                messages.success(request, 'Account created! You can now log in.')
+    return render(request, 'login_register.html')
 
 def chat_bot_view(request):
     user_message = request.GET.get("message", "").lower()
