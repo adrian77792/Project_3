@@ -402,3 +402,7 @@ The project meets modern web development standards in terms of design, performan
 - Implemented a hidden sticky sidebar on the left side.
 - Positioned with CSS (position: fixed; and vertical centering).
 - Provides quick access to essential navigation links.
+
+### Main Container 
+- Home page is built inside a main container holding partials.
+- Enhances readability and ensures a modular structure.
