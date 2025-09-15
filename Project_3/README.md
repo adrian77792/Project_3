@@ -64,3 +64,17 @@ A detailed README.md explains the project’s purpose, setup, technologies, and 
 - [Acknowledgments](#-acknowledgments)
 
 ---
+
+## 🎨 User Experience (UX)
+
+### 🎯 Target Audience
+
+- Clients of the beauty salon interested in services such as permanent makeup, eyelash styling, aesthetic treatments, and lash lifting/lamination.
+
+- Individuals looking for a convenient online booking system to quickly and easily schedule an appointment at the beauty salon.
+
+- Regular clients who want to use a user panel to check appointments, view service history, and manage their reservations.
+
+- New clients seeking a professional beauty salon offering modern and safe aesthetic treatments.
+
+- Potential partners and trainees interested in training courses or collaboration in the field of eyelash styling and beauty services.
