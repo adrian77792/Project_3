@@ -301,3 +301,14 @@ git clone https://github.com/adrian77792/Project2.git
 ```
 
 Now you're all set! 🚀
+
+## ✅ Testing
+
+### 🧪 Scope of Testing
+- Responsiveness – Verified across multiple device sizes: desktop, tablet, smartphone.
+- Cross-browser compatibility – Tested on latest versions of Chrome, Firefox, Edge, and Safari.
+- Navigation usability – Checked all links, buttons, and interactive sections for smooth operation.
+- Form validation – Ensured proper handling of valid/invalid inputs and error messaging.
+- HTML & CSS validation – Validated using Nu HTML Checker and W3C CSS Validator.
+---
+
