@@ -78,3 +78,18 @@ A detailed README.md explains the project’s purpose, setup, technologies, and 
 - New clients seeking a professional beauty salon offering modern and safe aesthetic treatments.
 
 - Potential partners and trainees interested in training courses or collaboration in the field of eyelash styling and beauty services.
+
+### 🧭 User Goals
+
+- **First-time visitors:**
+Discover the range of beauty services (permanent makeup, eyelash styling, aesthetic treatments), learn about the salon’s expertise, and easily book an appointment online.
+
+- **Returning clients:**
+Log in to their personal account to check upcoming appointments, view service history, or modify/cancel reservations.
+
+- **Potential trainees/partners:**
+Explore available training courses, learn about collaboration opportunities, and register interest directly through the platform.
+
+-**All users:**
+Benefit from a simple, mobile-friendly interface that streamlines booking, account management, and communication with the salon.
+
