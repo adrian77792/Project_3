@@ -33,7 +33,7 @@
 
     <!-- Data -->
     <label for="date">Data:</label>
-    <input type="date" name="date" id="date" required>
+    <input type="date" name="date" id="date" value="{{ selected_date }}" required>
     <br><br>
 
     <!-- Godzina start -->
@@ -42,14 +42,16 @@
     <select id="hour" name="hour" required>
     <option value="">-- wybierz --</option>
     {% for h in hours %}
-        <option value="{{ h }}">{{ h }}</option>
+        <option value="{{ h }}" {% if h == selected_hour %}selected{% endif %}>
+            {{ h }}
+        </option>
     {% endfor %}
-</select>
+    </select>
     <br><br>
 
     <!-- Submit -->
-    <button type="submit">Zarezerwuj</button>
-</form>
+    <button type="submit" class="book-btn ">Zarezerwuj</button>
+    </form>
  
 <div class="button-container">
 

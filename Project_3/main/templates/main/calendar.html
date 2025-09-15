@@ -15,54 +15,39 @@
 </head>
 {% include "partials/header.html" %}
 
-  <div class="calendar">
-    <!-- Pusta komórka w lewym górnym rogu -->
+<div class="calendar">
     <div></div>
-
-    <!-- Nagłówki dni -->
     {% for day in week_days %}
         <div class="calendar-header">{{ day|date:"D d.m" }}</div>
     {% endfor %}
 
-
-    <!-- {% for hour in hours %}
-         
-        <div class="calendar-time">{{ hour }}</div>
-
-       
-        {% for day in week_days %}
-            <div class="calendar-cell"></div>
-        {% endfor %}
-    {% endfor %}-->
-    {% for day in calendar_list %}
-    <h3>{{ day.day }}</h3>
-    {% for h in day.hours %}
-        <div>{{ h.hour }}: 
-            {% if h.slots %}
-                {% for s in h.slots %}
-                    {{ s.service }} ({{ s.duration }}h){% if not forloop.last %}, {% endif %}
-                {% endfor %}
-            {% else %}
-                No reservation
+    {% for row in table %}
+        <div class="calendar-time">{{ row.hour }}</div>
+        {% for slot in row.slots %}
+            <div class="calendar-cell {% if slot.reserved %}reserved{% endif %} "
+            {% if slot.reserved %}
+                style="background-color: purple; color: white; animation: 6s ease 0s infinite normal none running colorShift;"
             {% endif %}
-        </div>
+            >
+                {% if slot.reserved %}
+                    {{ slot.service }}
+                {% else %}
+                    <a href="{% url 'reservation' %}?date={{ slot.date|date:'Y-m-d' }}&hour={{ slot.hour }}" style="display: block; width: 100%; height: 100%;"></a>
+                    
+                        
+                    </a>    
+                {% endif %}
+                
+            </div>
+
+        {% endfor %}
     {% endfor %}
-{% endfor %}
 </div>
-<h2>Reserved Slots</h2>
-<ul>
-    {% for slot in reserved_slots %}
-        <li>
-            {{ slot }}
-        </li>
-    {% empty %}
-        <li>No reservations yet.</li>
-    {% endfor %}
-</ul>
+
   </section>
 </div>
 <ul>
-        <li></li>
+        
 </ul>
 
 <div class="button-container">

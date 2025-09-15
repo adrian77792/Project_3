@@ -40,40 +40,52 @@ def calendar_view(request):
     services = Service.objects.all()
     start_date = datetime.date.today()
     week_days = [(start_date + datetime.timedelta(days=i)) for i in range(7)]
-    hours = [f"{h:02d}:00" for h in range(8, 19)]
+    hours = [f"{h:02d}:00" for h in range(8, 20)]
 
-    # pobieramy wszystkie rezerwacje w tym tygodniu
-    reservations = Reservation.objects.select_related("service").filter(
-        date__range=(start_date, start_date + datetime.timedelta(days=6))
-    )
+    # rezerwacje
+    reservations = Reservation.objects.select_related("service").filter(date__in=week_days)
+    reserved_map = {}  # (hour, date) -> (title, duration)
+    for r in reservations:
+        start_hour = r.time.hour
+        duration = r.service.time  # liczba godzin
+        for i in range(duration):
+            hour = f"{start_hour + i:02d}:00"
+            reserved_map[(hour, r.date)] = (r.service.title, duration)
+    print(reserved_map)
 
-    # budujemy listę dni z godzinami i slotami
-    calendar_list = []
-    for day in week_days:
-        day_str = day.strftime("%Y-%m-%d")
-        hours_list = []
-        for hour in hours:
-            matching_slots = [
-                {
-                    "service": r.service.title,
-                    "duration": r.service.time,
-                    "time": r.time.strftime("%H:%M")
-                }
-                for r in reservations
-                if r.date.strftime("%Y-%m-%d") == day_str and r.time.strftime("%H:%M") == hour
-            ]
-            hours_list.append({"hour": hour, "slots": matching_slots})
-        calendar_list.append({"day": day_str, "hours": hours_list})
+    # budujemy tabelę: lista wierszy
+    table = []
+    for h in hours:
+        row = []
+        for d in week_days:
+            service = reserved_map.get((h, d))
+            if service:
+                row.append({
+                    "hour": h,
+                    "date": d,
+                    "reserved": bool(service),
+                    "service": service[0]
+                })
+            else:
+                row.append({
+                    "hour": h,
+                    "date": d,
+                    "reserved": bool(service),
+                    "service": "Zarezerwuj"
+                })
 
-    return render(request, "main/calendar.html", {
-        "services": services,
-        "calendar_list": calendar_list,
+        table.append({"hour": h, "slots": row})
+
+    return render(request, 'main/calendar.html', {
         "week_days": week_days,
-        "hours": hours,
+        "table": table
     })
 
 def reservation(request):
     services= Service.objects.all()
+    selected_date = request.GET.get("date")  # np. '2025-09-17'
+    selected_hour = request.GET.get("hour")  # np. '10:00'
+    
     hours = [f"{h:02d}:00" for h in range(8, 19)]
     if request.method == "POST":
         service_id = request.POST.get("service")
@@ -88,7 +100,8 @@ def reservation(request):
             time=time_obj
         )
         return redirect("calendar")
-    return render(request, 'main/reservation.html',{'services':services, 'hours':hours})
+    return render(request, 'main/reservation.html',{'services':services, 'hours':hours, "selected_date": selected_date,
+        "selected_hour": selected_hour,})
 
 def resume(request):
     services= Service.objects.all()
