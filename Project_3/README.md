@@ -395,3 +395,10 @@ The project meets modern web development standards in terms of design, performan
 ![AmIResponsive](readme/error7.jpg)
 ![AmIResponsive](readme/error8.jpg)
 ---
+
+## 📚 Credits
+
+### Sidebar 
+- Implemented a hidden sticky sidebar on the left side.
+- Positioned with CSS (position: fixed; and vertical centering).
+- Provides quick access to essential navigation links.
