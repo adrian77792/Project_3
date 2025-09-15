@@ -410,3 +410,11 @@ The project meets modern web development standards in terms of design, performan
 ### Footer and Header as Partials
 - Both footer and header are created as partial templates.
 - Reused throughout the project → improves consistency and scalability.
+
+### Bootstrap 
+- Integrated via Bootstrap 5 CDN for rapid styling and layout.
+- Used .container, .d-flex, .justify-content-between, .align-items-center, .text-center, .bg-dark,    .text-light, and grid utilities for responsive design.
+- Ensures:
+- Consistent spacing and alignment
+- Mobile-first responsiveness across all devices
+- Modern UI with minimal custom CSS overrides
