@@ -248,3 +248,15 @@ Summary Preview – Shows the selected treatment and scheduled duration for easy
 
 Action Buttons – Options to confirm the booking or save the selection for later.
 
+## 🛠️ Technologies Used
+
+- **HTML5** – Markup structure
+
+- **CSS3** – Styling
+
+- **JavaScript** – Interactivity
+
+- **Bootstrap 5** – Responsive layout and components
+
+- **Python & Django** – Backend development, server-side logic, and database management
+
