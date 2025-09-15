@@ -312,3 +312,8 @@ Now you're all set! 🚀
 - HTML & CSS validation – Validated using Nu HTML Checker and W3C CSS Validator.
 ---
 
+### 🧩 Test Environments 
+- Browsers: Chrome, Firefox, Edge, Safari (latest versions)
+- Devices: Windows 11 Desktop (1920x1080), Android Smartphones (Pixel 5, Samsung Galaxy S10/A54), iPhone 13, iPad Mini
+- Validators: Nu HTML Checker, W3C CSS Validator
+---
