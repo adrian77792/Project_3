@@ -119,4 +119,32 @@ Benefit from a simple, mobile-friendly interface that streamlines booking, accou
 ![AmIResponsive](readme/page4.png)
 ![AmIResponsive](readme/page5.png)
 
+### 🎨 Color Scheme
 
+The website uses a modern, elegant, and professional color palette associated with luxury and creativity:
+
+- **Primary Colors:**
+
+- Purple #6A4B7C – used for buttons, headers, and card backgrounds, conveying creativity, luxury, and femininity.
+
+- Gold #CFA15A – used for borders, highlights, and hover effects, emphasizing elegance and premium quality.
+
+- **Secondary Colors:**
+
+- Soft White #F8F8F8 / #FFFFFF – background areas, ensuring readability and a clean, professional look.
+
+- Dark Purple #270049 – main text color, providing high contrast and clarity.
+
+- **Accent Colors:**
+
+- Light Yellow #FFD700 – small highlights such as borders or hover effects for interactive elements.
+
+- Soft Pink #E98CA3 – subtle animated effects on buttons and hover states, adding a delicate, luxurious touch.
+
+- **UX Considerations:**
+
+- High contrast between text and background ensures accessibility.
+
+- Buttons and CTAs stand out clearly against soft backgrounds.
+
+- Overall palette communicates trust, luxury, and professionalism suitable for a beauty salon.
