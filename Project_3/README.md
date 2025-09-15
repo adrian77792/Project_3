@@ -151,35 +151,36 @@ The website uses a modern, elegant, and professional color palette associated wi
 
 ## 🔥 Features
 
-🚧 Planned Features
+## 🚧 Planned Features
 My project is under active development. Below are the features I plan to implement in future updates to enhance functionality, improve user experience, and expand the services offered on my site. Feedback and suggestions are always welcome!
 
-🛒 E-commerce Module (Products & Services)
+- **🛒 E-commerce Module** (Products & Services)
 I will add a shopping cart and order system to allow customers to purchase beauty products and exclusive service packages.
 
-🌐 Multilingual Support (PL/EN)
+- **🌐 Multilingual Support (PL/EN)**
 I will enable users to switch between Polish and English versions of the site to reach a wider audience.
 
-🔍 Search Functionality
+- **🔍 Search Functionality**
 I will implement a site-wide search bar to help users quickly find treatments, training courses, and other content.
 
-📅 Expanded Online Booking/Reservations
+- **📅 Expanded Online Booking/Reservations**
 I will allow visitors to book additional treatments and courses, and in the future, I will display service prices.
 
-💬 Live Chat Support
+- **💬 Live Chat Support**
 I will integrate real-time messaging to answer clients’ questions instantly.
 
-📈 Visitor Analytics
+- **📈 Visitor Analytics**
 I will track site traffic, user behavior, and popular services to optimize the offerings.
 
-🌙 Dark Mode Switch
+- **🌙 Dark Mode Switch**
 I will give users the option to switch between light and dark themes for a personalized experience.
 
-🧪 Unit & End-to-End Testing
+- **🧪 Unit & End-to-End Testing**
 I will introduce testing to ensure website reliability and prevent bugs in production.
 
-📄 Headless CMS Integration
+- **📄 Headless CMS Integration**
 I will connect the site to a content management system (e.g., Strapi, Netlify CMS) to easily update services, training courses, and promotional content.
+
 
 ### 🏠 Home Page
 
@@ -246,3 +247,4 @@ Fixed Duration Treatments – Each service has a pre-set duration, so clients si
 Summary Preview – Shows the selected treatment and scheduled duration for easy planning.
 
 Action Buttons – Options to confirm the booking or save the selection for later.
+
