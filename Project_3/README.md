@@ -208,3 +208,41 @@ The home page of Veloria London presents a luxurious beauty and aesthetic studio
 - **Footer:** Minimalist footer includes copyright information (“© Veloria London”), social media icons (Facebook, Instagram), and contact links (phone and email).
 
 - **UX Highlights:** High-contrast text ensures readability, hover effects and animated buttons enhance interaction, and the overall design balances elegance with functional navigation to make booking services easy.
+
+### 🛠️ Services
+
+Luxury Beauty & Aesthetic Treatments – London
+
+🌟 Transformative Experiences
+See the results of our professional beauty services! We specialize in enhancing natural beauty with precision, style, and lasting results.
+
+🏠 Our Services at Veloria London
+
+We provide expert beauty and aesthetic treatments with a focus on elegance, safety, and client satisfaction. Our team ensures every session is tailored to your needs, delivering luxurious results.
+
+🔧 Service Offerings
+
+Eyelash extensions, lifts, and treatments
+
+Permanent makeup (eyebrows, eyeliner, lips)
+
+Professional beauty training courses
+
+Aesthetic treatments including facials, skin rejuvenation, and anti-aging procedures
+
+Personalized consultations to select the best treatments for each client
+
+✅ Commitment to Quality
+We pride ourselves on professionalism, precision, and attention to detail. Every treatment and course at Veloria London is delivered with care to ensure client satisfaction, safety, and long-lasting results.
+
+The Service Planning & Booking subpage helps clients easily schedule their treatments. Here’s what it includes:
+
+Page Overview
+
+Service Selection – Clients can choose a treatment from the list (eyelashes, permanent makeup, aesthetic treatments, etc.).
+
+Fixed Duration Treatments – Each service has a pre-set duration, so clients simply select the desired treatment without worrying about specifying time.
+
+Summary Preview – Shows the selected treatment and scheduled duration for easy planning.
+
+Action Buttons – Options to confirm the booking or save the selection for later.
