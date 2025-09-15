@@ -348,3 +348,15 @@ Expected Result: Layout and behavior consistent across all browsers.
 #### 4. 🧹 HTML & CSS Validation 
 - Steps: Validate pages using Nu HTML Checker and W3C CSS Validator.
 - Expected Result:No critical errors in HTML or CSS.
+
+**Initial Findings**:- 
+- ❌ **Error**: `<title>` and `<style>` elements incorrectly placed inside `<body>`.
+- ❌ **CSS Parse Error**: Minor syntax issue in external stylesheet.
+
+**Corrections**:
+- 🛠️ Moved `<title>` and `<style>` to inside the `<head>`.
+- 🛠️ Fixed CSS syntax errors.
+
+✅ **Final Status**: No validation errors after fixes.
+
+---
