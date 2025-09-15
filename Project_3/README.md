@@ -380,3 +380,18 @@ Expected Result: Layout and behavior consistent across all browsers.
 - ✅ Accessibility – Checked alt tags, semantic HTML structure, and color contrasts.
 - ✅ HTML & CSS validation – No critical issues detected after W3C validation.
 - ✅ Performance – Optimized image loading and external scripts (Bootstrap via CDN).
+
+>>> **Overall result**: 
+The project meets modern web development standards in terms of design, performance, accessibility, and maintainability..
+
+---
+
+![AmIResponsive](readme/error1.jpg)
+![AmIResponsive](readme/error2.jpg)
+![AmIResponsive](readme/error3.jpg)
+![AmIResponsive](readme/error4.jpg)
+![AmIResponsive](readme/error5.jpg)
+![AmIResponsive](readme/error6.jpg)
+![AmIResponsive](readme/error7.jpg)
+![AmIResponsive](readme/error8.jpg)
+---
