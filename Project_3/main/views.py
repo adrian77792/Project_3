@@ -112,8 +112,32 @@ def reservation(request):
     services= Service.objects.all()
     selected_date = request.GET.get("date")  # np. '2025-09-17'
     selected_hour = request.GET.get("hour")  # np. '10:00'
+    # rezerwacje
+    start_date = datetime.date.today()
+    week_days = [(start_date + datetime.timedelta(days=i)) for i in range(7)]
+    hours = [f"{h:02d}:00" for h in range(8, 20)]
+    reservations = Reservation.objects.select_related("service").filter(date__in=week_days)
+    reserved_map = {}  # (hour, date) -> (title, duration)
+    for r in reservations:
+        start_hour = r.time.hour
+        duration = r.service.time  # liczba godzin
+        for i in range(duration):
+            hour = f"{start_hour + i:02d}:00"
+            reserved_map[(hour, r.date)] = (r.service.title, duration)
+    print(reserved_map)
     
     hours = [f"{h:02d}:00" for h in range(8, 19)]
+    # odfiltruj zajęte godziny dla wybranego dnia
+    if selected_date:
+        try:
+            selected_date_obj = datetime.datetime.strptime(selected_date, "%Y-%m-%d").date()
+            hours = [
+                hour for hour in hours
+                if (hour, selected_date_obj) not in reserved_map
+            ]
+        except ValueError:
+            pass
+    
     if request.method == "POST":
         service_id = request.POST.get("service")
         date = request.POST.get("date")
