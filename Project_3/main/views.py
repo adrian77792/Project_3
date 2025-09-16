@@ -165,7 +165,7 @@ def user_login(request):
             else:
                 User.objects.create_user(username=username, email=email, password=password1)
                 messages.success(request, 'Account created! You can now log in.')
-    return render(request, 'login_register.html')
+    return render(request, 'login.html')
 
 def chat_bot_view(request):
     user_message = request.GET.get("message", "").lower()
