@@ -57,7 +57,7 @@ LOGOUT_REDIRECT_URL = '/login/'  # Gdzie przekierować po wylogowaniu
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / "templates"],
+        'DIRS': [BASE_DIR / 'main' / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
