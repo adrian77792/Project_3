@@ -8,6 +8,8 @@ from collections import OrderedDict
 from twilio.rest import Client
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from django import forms
+from .models import Review
 import datetime
 import json
 
@@ -246,3 +248,20 @@ def chat_bot_view(request):
 
 def chat_bot_page(request):
     return render(request, 'main/chatbot.html')
+
+class ReviewForm(forms.ModelForm):
+    class Meta:
+        model = Review
+        fields = ['name', 'email', 'content', 'rating']
+
+def reviews_page(request):
+    if request.method == 'POST':
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('reviews_page')
+    else:
+        form = ReviewForm()
+
+    reviews = Review.objects.all().order_by('-created_at')
+    return render(request, 'main/reviews.html', {'reviews': reviews, 'form': form})

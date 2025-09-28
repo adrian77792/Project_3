@@ -39,6 +39,16 @@ class Reservation(models.Model):
 
     def str(self):
         return f"{self.service.name} - {self.date} {self.time}"
+
+class Review(models.Model):
+    name = models.CharField(max_length=100)  # Imię autora opinii
+    email = models.EmailField(blank=True, null=True)  # opcjonalnie
+    content = models.TextField()  # Treść opinii
+    rating = models.PositiveSmallIntegerField(default=5)  # Ocena 1-5
+    created_at = models.DateTimeField(auto_now_add=True)  # Data dodania
+
+    def __str__(self):
+        return f"{self.name} - {self.rating}"
     
     
    

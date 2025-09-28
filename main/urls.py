@@ -14,4 +14,5 @@ urlpatterns = [
     path('reservation/', views.reservation ,name='reservation'),
     path('', views.chat_bot_view ,name='chatbot'),
     path('chatbot/', views.chat_bot_page ,name='chatbot'),
+    path('reviews/', views.reviews_page, name='reviews_page'),
     ]
