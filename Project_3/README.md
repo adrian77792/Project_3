@@ -10,7 +10,7 @@ The website features an integrated calendar and reservation system, allowing use
 
 Designed with usability and aesthetics in mind, the platform demonstrates how front-end technologies can work together to create a seamless user experience — from browsing available dates to managing reservations. It’s a complete example of how interactivity, design, and functionality blend to form a professional, business-oriented web solution.
 
-🔗 **Live Site:** [Explore the live project](https://adrian77792.github.io/Project2/index.html)  
+🔗 **Live Site:** [Explore the live project](https://adrianszmajewski-project3-4820354a1036.herokuapp.com/)  
 🔗 **GitHub Repository:** [View the codebase](https://github.com/adrian77792/Project2)
 
 ## 🎯 Project Goals
