@@ -1,11 +1,11 @@
 function openMENU() {
-    document.getElementById("hamburger").style.display = "none";
+    //document.getElementById("hamburger").style.display = "none";
     const menu=document.getElementById("nav-bottom");
     menu.classList.add("open");
 }
 
 function closeMENU() {
-    document.getElementById("hamburger").style.display = "block";
+    //document.getElementById("hamburger").style.display = "block";
     const menu=document.getElementById("nav-bottom");
     menu.classList.remove("open");
 }

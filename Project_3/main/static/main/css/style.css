@@ -734,10 +734,10 @@ header.top-nav {
     }
   }
 
-  .service-card h3 {
+  /*.service-card h3 {
     color: white;
     animation: fadeText 4s infinite;
-  }
+  }*/
   
   @keyframes fadeText {
     0%, 100% {

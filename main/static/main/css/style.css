@@ -95,7 +95,7 @@ body {
 color: #dd7cf0;
 font-size:x-large;
 margin-left: 1.5rem;
-display: inline;
+display: block;
 width: fit-content;
 transition:all 0.3s ease-in-out ;
 text-shadow: 1px 1px 2px #270049;
@@ -244,15 +244,15 @@ gap: 10px;
     border-top: 1.6px solid #ffd700; /* złoto */
     padding: 12px 10px;
     gap: 0.5px;
-    background-color: #d9cedf15;
+    background-color: #6a4b7c;
     height: calc(100vh);
-    width: 15%;
+    width: 250px;
     position: fixed;
     top:0;
     left:0;
     z-index: 1000;
     padding-bottom: 3.5%;
-    transform: translateX(-100%);
+    transform: translateX(-250px);
     transition:transform 0.4s ease-out;
   }
   .nav-bottom.open {
@@ -502,19 +502,13 @@ header.top-nav {
     }
 
     @media (max-width: 900px) {
-      .nav-top {
-        flex-direction: row;
-        gap: 10px;
-        text-align: center;
-      }
-  
+      
       .logo {
         font-size: 1.5rem;
       }
   
       .nav-bottom {
         flex-direction: column;
-        align-items: center;
         gap: 10px;
       }
     }
@@ -734,10 +728,10 @@ header.top-nav {
     }
   }
 
-  .service-card h3 {
+  /*.service-card h3 {
     color: white;
     animation: fadeText 4s infinite;
-  }
+  }*/
   
   @keyframes fadeText {
     0%, 100% {
