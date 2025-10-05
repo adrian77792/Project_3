@@ -77,22 +77,31 @@
      
       <a class="menu left first text-with-ellipse-line" href="{% url 'index' %}">Welcome</a>
 
-      <a class="menu left text-with-ellipse-line" href="#">About Me</a>
-
       <a class="menu left text-with-ellipse-line" href="#">Services</a>
 
       <a class="menu left text-with-ellipse-line" href="{% url 'reviews_page' %}">Opinions</a>
-
-      <a class="menu left text-with-ellipse-line" href="#">Price List</a>
 
       <a class="menu left text-with-ellipse-line" href="#">Blog</a>
 
       <a class="menu left text-with-ellipse-line" href="#">Career</a>
 
-      <a class="menu left text-with-ellipse-line" href="#">Competitions</a>
-
       <a class="menu left text-with-ellipse-line" href="#">Contact</a>
 
+      <a class="menu left text-with-ellipse-line" href="{% url 'calendar' %}">Book Now</a>
+      {% if not user.is_authenticated %}
+      <a class="menu left text-with-ellipse-line" href="{% url 'login' %}">Login</a>
+      {% endif %}
+
+      {% if user.is_authenticated %}
+      
+      <form method="post" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button type="submit" class="menu left text-with-ellipse-line" data-url="{% url 'index' %}" onclick="window.location.href=this.dataset.url;">
+          logout
+        </button>
+    </form>
+
+      {% endif %}
       <div>
         <br>
       </div>
