@@ -229,7 +229,13 @@ justify-content: center;
 margin-right: 10px;
 gap: 10px;
 }
-
+.overlay-image {
+  position: absolute;
+  width: 100px; /* pomniejszony do ~100 px */
+  bottom: 100%; /* ustawia nad dolną krawędzią dużego */
+  left: 50%;
+  transform: translateX(-50%) translateY(10px); /* lekkie przesunięcie w dół, by zachodził */
+}
 .login_logout2{
   display: flex;
   flex-direction: row;
