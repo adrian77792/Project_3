@@ -231,10 +231,11 @@ gap: 10px;
 }
 .overlay-image {
   position: absolute;
-  width: 100px; /* pomniejszony do ~100 px */
-  bottom: 100%; /* ustawia nad dolną krawędzią dużego */
-  left: 50%;
-  transform: translateX(-50%) translateY(10px); /* lekkie przesunięcie w dół, by zachodził */
+  height: 120px !important;
+  width: 40%; /* pomniejszony do ~100 px */
+  bottom: 90%; /* ustawia nad dolną krawędzią dużego */
+  left: 85%;
+  transform: translateX(-50%) translateY(50%); /* lekkie przesunięcie w dół, by zachodził */
 }
 .login_logout2{
   display: flex;
@@ -490,7 +491,12 @@ header.top-nav {
   z-index: -1;
   pointer-events: none;
 }
+  @media (min-width: 900px) {
+    .desktop-hide {
+      display:none !important
 
+  }
+}
   @media (max-width: 900px) {
     .main-section {
       flex-direction: column;

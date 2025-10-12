@@ -13,7 +13,7 @@
       <div>
         
       
-      <div class="hamburger" id="hamburger" onmouseover="openMENU()" >
+      <div class="mobile-hide hamburger" id="hamburger" onmouseover="openMENU()" >
         <div class="line"></div>
         <div class="line"></div>
         <div class="line"></div>
@@ -24,6 +24,12 @@
     <div class="rotating-logo-container">
       <img src="{% static 'main/img/logo_part1.png' %}" alt="Rotating Ring" class="rotating-ring">
       <img src="{% static 'main/img/logo_part2.png' %}" alt="Static Center" class="static-center">
+    </div>
+
+    <div class="desktop-hide hamburger" id="hamburger" onmouseover="openMENU()" >
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
     </div>
 
     <div class="login_logout2">
@@ -50,7 +56,7 @@
     {% endif %}
 
       </div>
-      <a href="{% url 'calendar' %}" class="book-btn "> BOOK NOW</a>
+      <a href="{% url 'calendar' %}" class="mobile-hide book-btn "> BOOK NOW</a>
 
     </div>
 
