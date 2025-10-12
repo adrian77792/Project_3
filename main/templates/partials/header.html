@@ -96,8 +96,8 @@
       
       <form method="post" action="{% url 'logout' %}">
         {% csrf_token %}
-        <button type="submit" class="menu left text-with-ellipse-line" data-url="{% url 'index' %}" onclick="window.location.href=this.dataset.url;">
-          logout
+        <button style="background-color: transparent; border: none;" type="submit" class="menu left text-with-ellipse-line" data-url="{% url 'index' %}" onclick="window.location.href=this.dataset.url;">
+          Logout
         </button>
     </form>
 
