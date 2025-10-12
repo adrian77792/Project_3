@@ -491,6 +491,9 @@ header.top-nav {
       align-items: center;
     }
 
+    .mobile-hide {
+      display:none !important
+    }
     .left-photo,
     .services-wrapper {
       flex: 0 0 100%;
@@ -500,18 +503,16 @@ header.top-nav {
     .services-grid {
       grid-template-columns: 1fr;
     }
-
-    @media (max-width: 900px) {
       
-      .logo {
-        font-size: 1.5rem;
-      }
-  
-      .nav-bottom {
-        flex-direction: column;
-        gap: 10px;
-      }
+    .logo {
+      font-size: 1.5rem;
     }
+  
+    .nav-bottom {
+      flex-direction: column;
+      gap: 10px;
+    }
+    
   }
 
    /* Animacja kolorów dla przycisku */

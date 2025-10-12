@@ -27,17 +27,17 @@
     </div>
 
     <div class="login_logout2">
-      <div class="login_logout">
+      <div class="login_logout mobile-hide">
         {% if not user.is_authenticated %}
-      <button class="image-login" data-url="{% url 'login' %}" onclick="window.location.href=this.dataset.url;">
+      <button class="image-login mobile-hide" data-url="{% url 'login' %}" onclick="window.location.href=this.dataset.url;">
         <img src="{% static 'main/img/login.png' %}" alt="Login">
       </button>
         {% endif %}
 
       {% if user.is_authenticated %}
-      <form method="post" action="{% url 'logout' %}">
+      <form class="mobile-hide" method="post" action="{% url 'logout' %}">
           {% csrf_token %}
-          <button type="submit" class="image-login" data-url="{% url 'index' %}" onclick="window.location.href=this.dataset.url;">
+          <button type="submit" class="image-login mobile-hide"  data-url="{% url 'index' %}" onclick="window.location.href=this.dataset.url;">
             <img src="{% static 'main/img/log_out.png' %}" alt="Log out" width="50" height="50">
           </button>
       </form>
