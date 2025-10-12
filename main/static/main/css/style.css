@@ -229,14 +229,7 @@ justify-content: center;
 margin-right: 10px;
 gap: 10px;
 }
-.overlay-image {
-  position: absolute;
-  height: 120px !important;
-  width: 40%; /* pomniejszony do ~100 px */
-  bottom: 90%; /* ustawia nad dolną krawędzią dużego */
-  left: 85%;
-  transform: translateX(-50%) translateY(50%); /* lekkie przesunięcie w dół, by zachodził */
-}
+
 .login_logout2{
   display: flex;
   flex-direction: row;
@@ -902,3 +895,32 @@ select:focus, input[type="date"]:focus, input[type="time"]:focus {
 .message.user { color: blue; }
 .message.bot { color: green; }
   
+.overlay-image {
+  position: absolute;
+  height: 120px !important;
+  width: 40%;
+  bottom: 90%;
+  left: 85%;
+  transform: translateX(-50%) translateY(50%);
+  cursor: pointer;
+  opacity: 1;
+  z-index: 1; /* tło */
+}
+
+/* Obrazek z napisem */
+.overlay-image.fade {
+  z-index: 2; /* nad tłem */
+  animation: fadeText 1s ease-in-out infinite;
+}
+
+/* Animacja pojawiania się i znikania napisu */
+@keyframes fadeText {
+  0%, 45% {
+    opacity: 1;
+  }
+  55%, 100% {
+    opacity: 0;
+  }
+}
+
+
