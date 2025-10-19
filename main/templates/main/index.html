@@ -52,7 +52,17 @@
             <p>
               {{ service.description }}
             </p>
-            <a href="#" class="book-btn">View offer</a>
+            <!-- link używa obrazów "before" i "after" -->
+            <a href="#" class="book-btn" aria-pressed="false">
+              <img src="{% static 'main/img/before.png' %}" 
+                   alt="Book now - przed" 
+                   class="btn-img btn-before"
+                   draggable="false">
+              <img src="{% static 'main/img/after.png' %}" 
+                   alt="Book now - po" 
+                   class="btn-img btn-after"
+                   draggable="false">
+            </a>
           </div>
           {% empty %}
           No services.
@@ -82,5 +92,6 @@
 {% include "partials/footer.html" %}
 <script src="{% static 'main/js/column.js' %}"></script>
 <script src="{% static 'main/js/menu.js' %}"></script>
+<script src="{% static 'main/js/button.js' %}" defer></script>
 </body>
 </html>

@@ -14,7 +14,7 @@ body {
 
   /* === TOP NAVIGATION === */
   header.top-nav {
-    border-bottom: 3px solid gold; /* złoto zamiast różu */
+    border-bottom: 3px solid #d4bf6e; /* złoto zamiast różu */
     height: 200px; /* dopasuj wysokość do logo */
     background-color:#6a4b7c;
     margin: 0;
@@ -92,7 +92,7 @@ body {
 }
 
 #nav-bottom .left{
-color: #dd7cf0;
+color: #ffffff;
 font-size:x-large;
 margin-left: 1.5rem;
 display: block;
@@ -102,17 +102,17 @@ text-shadow: 1px 1px 2px #270049;
 }
 
 #nav-bottom .left:hover{
-  border-bottom: gold solid 4px;
+  border-bottom: #d4bf6e solid 2px;
   margin-left: 1.5rem;
   }
   #nav-bottom .first {
     text-shadow: 1px 1px 2px #270049;
-    color: #270049;
+    color: #dd7cf0;
   }
 
   #nav-bottom .first:hover {
-    color:#270049;
-    border-bottom: gold solid 4px;
+    color:#ffffff;
+    border-bottom: #d4bf6e solid 2px;
 
   }
 
@@ -145,11 +145,11 @@ text-shadow: 1px 1px 2px #270049;
     width: 50px;
     height: 10px;
     background-color: white;
-    border: 2px solid gold !important;
+    border: 2px solid #d4bf6e !important;
     border-radius: 10px;
     background-color: #270049;
     margin: 4px 0;
-    animation: colorShift 6s infinite;
+    animation: colorShift 4s infinite;
     transition: none;
     
 }
@@ -185,7 +185,7 @@ text-shadow: 1px 1px 2px #270049;
   }
 
 
-  .book-btn {
+  /*.book-btn {
     border: 2px solid #ffd700; 
     background-color: #270049;
     color: white;
@@ -202,13 +202,13 @@ text-shadow: 1px 1px 2px #270049;
 
   .book-btn:hover {
     animation-play-state: paused;
-    background-color: #cfa15a; /* złoto */
+    background-color: #cfa15a; 
     border-color: #6a4b7c;
     box-shadow: 0 0 15px 4px #cfa15aaa;
     transform: scale(1.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
     cursor: pointer;
-  }
+  }*/
 
   .book-btn2 {
   background-color: #6a4b7c00;
@@ -241,7 +241,7 @@ gap: 10px;
     justify-content: space-between;
     flex-wrap: wrap;
     flex-direction: column;
-    border-top: 1.6px solid #ffd700; /* złoto */
+    border-top: 1.6px solid#d4bf6e; /* złoto */
     padding: 12px 10px;
     gap: 0.5px;
     background-color: #6a4b7c;
@@ -314,7 +314,7 @@ gap: 10px;
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
-    border: 2px solid gold;
+    border: 2px solid #d4bf6e;
     border-radius: 16px;
     min-height: 320px;
     text-align: center;
@@ -361,20 +361,20 @@ gap: 10px;
     margin-top: 10px;
     margin-bottom: 12px;
     padding: 10px 18px;
-    background-color: #6a4b7c;
+    /*background-color: #6a4b7c00;*/
     color: white;
     border-radius: 25px;
     text-decoration: none;
     font-weight: 500;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 0 8px #cfa15a88;
-    border: 1px solid gold;
+    /*transition: background-color 0.3s ease, box-shadow 0.3s ease;*/
+    /*box-shadow: 0 0 8px #cfa15a88;*/
+    /*border: 1px solid gold;*/
   }
 
-  .service-card a:hover {
+  /*.service-card a:hover {
     background-color: #cfa15a;
     box-shadow: 0 0 12px #cfa15aaa;
-  }
+  }*/
 
   .image-wrapper {
     position: relative;
@@ -452,7 +452,7 @@ gap: 10px;
 
 /* Fixed footer positioning */
 #footer {
-  background-color: #6a4b7cb9 !important;
+  background-color: #6a4b7c !important;
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -523,19 +523,15 @@ header.top-nav {
    /* Animacja kolorów dla przycisku */
    @keyframes colorShift {
     0% {
-      background-color: #e98ca3; /* róż */
+      background-color: #6a4b7c; /* fiolet */
       box-shadow: 0 0 8px #cfa15a88; /* złoty cień */
     }
-    33% {
-      background-color: #6a4b7c; /* fiolet */
-      box-shadow: 0 0 8px #cfa15a88;
-    }
-    66% {
+    50% {
       background-color: #cfa15a; /* złoto */
       box-shadow: 0 0 12px #cfa15aaa;
     }
     100% {
-      background-color: #e98ca3; /* róż */
+      background-color: #6a4b7c; /* fiolet */
       box-shadow: 0 0 8px #cfa15a88;
     }
   }
@@ -559,7 +555,7 @@ header.top-nav {
     border-bottom-left-radius: 16px;
     border-bottom-right-radius: 16px;
     overflow: hidden;
-    border: solid gold 2px;
+    border: solid #d4bf6e 2px;
   }
   
   .marquee-container {
@@ -666,14 +662,14 @@ header.top-nav {
     z-index: 2;
   }
   .image-login {
-    border: 2px solid gold;   /* złota ramka */
+    border: 2px solid #d4bf6e;   /* złota ramka */
     border-radius: 50%;       /* koło */
     background-color: transparent;
     padding: 0px;             /* odstęp między ramką a obrazkiem */
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    animation: colorShift 6s infinite;
+    animation: colorShift 4s infinite;
   }
 
   .image-login:hover {
@@ -688,7 +684,7 @@ header.top-nav {
   }
 
 .login_form {
-  border: 2px solid gold !important;
+  border: 2px solid #d4bf6e !important;
   border-radius: 50% !important;       
   background-color: transparent;
   padding: 0px !important;            
@@ -715,7 +711,7 @@ header.top-nav {
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    box-shadow: 0 4px 6px gold;
+    box-shadow: 0 4px 6px #d4bf6e;
     font-size: 14px;
     transition: background-color 0.2s ease;
   }
@@ -923,4 +919,70 @@ select:focus, input[type="date"]:focus, input[type="time"]:focus {
   }
 }
 
+.book-btn {
+  display: inline-block;
+  position: relative;
+  width: 220px;
+  height: 48px;
+  overflow: hidden;
+  border-radius: 999px;
+  cursor: pointer;
+}
 
+.book-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;                 /* zajmuje całą powierzchnię przycisku */
+  border-radius: 999px;     /* dopasowanie do kształtu przycisku */
+  pointer-events: none;     /* nie blokuje kliknięć */
+  z-index: 2;               /* nad obrazkami */
+}
+
+.btn-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 260ms ease, transform 260ms ease;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  border: solid 1px gold;
+}
+
+
+.btn-before {
+  opacity: 1;
+  z-index: 2;
+}
+
+.btn-after {
+  opacity: 0;
+  z-index: 1;
+}
+
+.book-btn:hover .btn-before,
+.book-btn:focus .btn-before {
+  opacity: 0;
+  transform: translateY(-3px);
+}
+
+.book-btn:hover .btn-after,
+.book-btn:focus .btn-after {
+  opacity: 1;
+}
+
+.book-btn.active .btn-before {
+  opacity: 0;
+  transform: translateY(-3px);
+}
+
+.book-btn.active .btn-after {
+  opacity: 1;
+}
+
+.book-btn:active {
+  transform: scale(0.98);
+  transition: transform 80ms;
+}
