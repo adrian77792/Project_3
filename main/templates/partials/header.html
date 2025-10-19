@@ -37,7 +37,7 @@
       <div class="line"></div>
     </div>
 
-    <div class="login_logout2">
+    <!--<div class="login_logout2">
       <div class="login_logout mobile-hide">
         {% if not user.is_authenticated %}
       <button class="image-login mobile-hide" data-url="{% url 'login' %}" onclick="window.location.href=this.dataset.url;">
@@ -51,18 +51,18 @@
           <button type="submit" class="image-login mobile-hide"  data-url="{% url 'index' %}" onclick="window.location.href=this.dataset.url;">
             <img src="{% static 'main/img/log_out.png' %}" alt="Log out" width="50" height="50">
           </button>
-      </form>
+      </form>!-->
 
       
       <!-- <button type="submit" class="image-logout">
         <img src="{% static 'main/img/log_out.png' %}" alt="Log out" width="50" height="50">
     </button>
   --> 
-    {% endif %}
+    <!--{% endif %}
 
-      </div>
-      <a href="{% url 'calendar' %}" class="mobile-hide book-btn "> BOOK NOW</a>
-
+      </div>!-->
+    <div>
+        <img class="overlay-image2 mobile-hide fade image" src="{% static 'main/img/book_now.png' %}" height="120px" alt="BOOK NOW" onclick="window.location.href='{% url 'calendar' %}';">
     </div>
 
     </div>
