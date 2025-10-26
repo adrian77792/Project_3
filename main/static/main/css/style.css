@@ -228,6 +228,42 @@ text-shadow: 1px 1px 2px #270049;
   .book-btn2:hover {
     color: #6a4b7c46;
   }
+
+  .book-btn3 {
+    border: 2px solid #cfa15a; 
+    background-color: #6a4b7c;
+    color: white;
+    fill: white;
+    padding: 5px 5px !important;
+    height: auto !important;
+    margin: auto;
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 600 !important;
+    display: flex !important;
+    align-items: center;
+    gap: 20px;
+    font-size: 16px;
+    border-radius: 35px;
+    cursor: pointer;
+    /*animation: colorShift 6s infinite;*/
+    transition: none;
+    text-decoration: none;
+    transform: translateY(-10%);
+  }
+
+  .book-btn3:hover {
+    animation-play-state: paused;
+    background-color: #ffffff; 
+    color: #6a4b7c;
+    fill: #6a4b7c;
+    border-color: #6a4b7c;
+    box-shadow: 0 0 15px 4px #cfa15aaa;
+    transform: scale(1.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+    cursor: pointer;
+    font-weight:800 !important;
+  }
+
 .login_logout {
 display: flex;
 flex-direction: column;
@@ -909,6 +945,11 @@ select:focus, input[type="date"]:focus, input[type="time"]:focus {
   opacity: 1;
   z-index: 1; /* tło */
 }
+
+.overlay-image:hover {
+    /*box-shadow: 0 10px 25px #d4bf6e;*/
+    border-color: #d4bf6e;
+  }
 
 /* Obrazek z napisem */
 .overlay-image.fade {

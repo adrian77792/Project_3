@@ -56,44 +56,9 @@
         
 </ul>
 
-<div class="button-container">
-
-  <div class="hamburger cross" onclick="scrollToTop()">
-    <div class="line arow1"></div>
-    <div class="line arow2"></div>
-    <div class="line arow3"></div>
-  </div>
-
-</div>
 <!-- Footer section containing copyright and external contact links -->
-<footer id="footer" class="bg-dark text-light py-3">
-    <div class="container d-flex justify-content-between align-items-center h-100">
-        
-        <!-- Dynamic year using JavaScript to keep content up-to-date -->
-        <p id="footer-text" class="mb-0">&copy; <span id="year"></span> VELORIA LONDON. All rights reserved.</p>
+{% include "partials/footer.html" %}
 
-       <!-- Social media and contact icons for accessibility and client interaction -->
-        <div class="footer-icons text-end">
-         
-            <a class="hidden-link" target="_blank" href="https://www.facebook.com/sandra.szczepaniak.3">
-                <img class="footer-icon mx-2" src="{% static 'main/img/social.png' %}" alt="This is link to Facebook">
-            </a>
-
-            <a class="hidden-link" target="_blank" href="https://www.instagram.com/sandraszczepaniak4/">
-              <img class="footer-icon mx-2" src="{% static 'main/img/instagram.png' %}" alt="This is our link to Instagram">
-            </a>
-
-            <a class="hidden-link" target="_blank" href="tel:+447539488172">
-            <img class="footer-icon mx-2" src="{% static 'main/img/phone.png' %}" alt="This is our phone number">
-            </a>
-
-            <a class="hidden-link" target="_blank" href="mailto:sandraszczepaniak4@gmail.com">
-                <img class="footer-icon mx-2" src="{% static 'main/img/message.png' %}" alt="This is link to Email">
-            </a>
-        
-        </div>
-    </div>
-</footer>
 <script src="{% static 'main/js/column.js' %}"></script>
 <script src="{% static 'main/js/menu.js' %}"></script>
 </body>
