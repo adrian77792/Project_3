@@ -12,7 +12,6 @@ urlpatterns = [
     path('logout/', auth_views.LogoutView.as_view(next_page='index'), name='logout'),
     path('calendar/', views.calendar_view ,name='calendar'),
     path('reservation/', views.reservation ,name='reservation'),
-    path('', views.chat_bot_view ,name='chatbot'),
     path('chatbot/', views.chat_bot_page ,name='chatbot'),
     path('reviews/', views.reviews_page, name='reviews_page'),
     ]
