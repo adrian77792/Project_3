@@ -64,14 +64,14 @@
 {% include "partials/footer.html" %}
 <style>
 .review-form {
-    width: 45%;           /* Ola */
+    width: 45%;           
     margin: 2rem auto;      /* wycentrowanie */
     display: flex;
-    flex-direction: row; /* Ola */
+    flex-direction: row; 
     flex-wrap: wrap;
     gap: 4rem;
     text-align: left;
-    justify-content: center; /* Ola */
+    justify-content: center; 
 }
 
 .review-form input, .review-form textarea {
@@ -103,7 +103,7 @@
 }
 .star-rating span {
     cursor: pointer;
-    color: #ccc;
+    color: #ffffff;
 }
 .star-rating span.selected,
 .star-rating span:hover,
@@ -112,7 +112,7 @@
 }
 
 /*#645e70 | #4e475b*/
-/* Od Oli */
+
 /* Reviews */
 .review-page-container {
   background-color: #c9bfdd;
@@ -151,12 +151,18 @@
     padding-bottom: 1rem;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 900px) {
     .review-form {
-        width: 100%;           /* Ola */
-        margin: 2rem auto;      /* wycentrowanie */
+        max-width: 100%;
+        width: 100%;           
+        margin: 2rem auto;     
         flex-wrap: wrap;
     }
+    .review-form-data, .review-form-message {
+    max-width: 100%;
+    width: 100%;
+    }
+    
 }
 
 /* Done:
