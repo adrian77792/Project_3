@@ -14,21 +14,25 @@
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
-<body>
-{% include "partials/header.html" %}
+{% include "partials/header.html" %} 
 
-<h2>All Opinions</h2>
+<div class="review-page-container">
+<div class="reviews-container">
+    <h2>All Opinions</h2>
 {% for review in reviews %}
-    <p><strong>{{ review.name }}</strong> ({{ review.rating }}⭐) - {{ review.created_at|date:"Y-m-d H:i" }}</p>
-    <p>{{ review.content }}</p>
+    <div class="review-instance-container">
+        <p><strong class="review-name">{{ review.name }}</strong> <span class="review-star">({{ review.rating }}⭐)</span> - <span class="review-date">{{ review.created_at|date:"Y-m-d H:i" }}</span></p>
+        <p class="review-content">{{ review.content }}</p>
+    </div>
     <hr>
 {% empty %}
     <p>Brak opinii.</p>
 {% endfor %}
-
+</div>
 
 <form method="post" class="review-form">
   {% csrf_token %}
+  <div class="review-form-data">
   <p>
     {{ form.name.label_tag }}<br>
     {{ form.name}}
@@ -37,11 +41,12 @@
     {{ form.email.label_tag }}<br>
     {{ form.email}}
   </p>
+  </div>
+  <div class="review-form-message">
   <p>
     {{ form.content.label_tag }}<br>
     {{ form.content}}
   </p>
-  
   <p>Rating:</p>
   <div class="star-rating">
     <span data-value="1">&#9733;</span>
@@ -53,21 +58,20 @@
   <input type="hidden" name="rating" id="id_rating" value="5">
 
   <button type="submit" class="book-btn">Add review</button>
+</div>
 </form>
-
-<ul>
-  <li></li>
-  <li></li>
-</ul>
-
+</div>
+{% include "partials/footer.html" %}
 <style>
 .review-form {
-    width: 33%;          /* 1/3 szerokości strony */
-    margin: 0 auto;      /* wycentrowanie */
+    width: 45%;           /* Ola */
+    margin: 2rem auto;      /* wycentrowanie */
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    flex-direction: row; /* Ola */
+    flex-wrap: wrap;
+    gap: 4rem;
     text-align: left;
+    justify-content: center; /* Ola */
 }
 
 .review-form input, .review-form textarea {
@@ -106,6 +110,59 @@
 .star-rating span:hover ~ span {
     color: gold;
 }
+
+/*#645e70 | #4e475b*/
+/* Od Oli */
+/* Reviews */
+.review-page-container {
+  background-color: #c9bfdd;
+  padding: 2rem 3rem;
+}
+
+.review-instance-container {
+    margin: 2rem 0;
+}
+
+.review-name {
+    font-size: 2rem;
+}
+
+.review-star {
+    font-size: 2rem;
+
+}
+
+.review-date {
+    font-size: 0.7rem;
+}
+
+.review-content {
+    margin-top: 0.7rem;
+    font-style: italic;
+}
+
+.review-form-data, .review-form-message {
+    max-width: 50%;
+    
+    flex-direction: column;
+}
+
+.review-form-data {
+    padding-bottom: 1rem;
+}
+
+@media (max-width: 576px) {
+    .review-form {
+        width: 100%;           /* Ola */
+        margin: 2rem auto;      /* wycentrowanie */
+        flex-wrap: wrap;
+    }
+}
+
+/* Done:
+- reviews-container
+- form : flex for media flexibility
+*/
 </style>
 
 <script>
@@ -137,8 +194,8 @@ stars.forEach(star => {
 });
 </script>
 
-<!-- Footer section containing copyright and external contact links -->
-{% include "partials/footer.html" %}
+
+  
 
 <script src="{% static 'main/js/column.js' %}"></script>
 <script src="{% static 'main/js/menu.js' %}"></script>
