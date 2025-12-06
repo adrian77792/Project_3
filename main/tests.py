@@ -1,3 +1,7 @@
 from django.test import TestCase
 
-# Create your tests here.
+
+class BasicTests(TestCase):
+    def test_homepage_status(self):
+        response = self.client.get("/")
+        self.assertIn(response.status_code, [200, 302])

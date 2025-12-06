@@ -4,4 +4,3 @@ from .models import Reservation
 
 admin.site.register(Service)
 admin.site.register(Reservation)
-
