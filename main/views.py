@@ -3,8 +3,6 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
 from .models import Service, Reservation
-from .models import SubService
-from collections import OrderedDict
 from twilio.rest import Client
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
@@ -13,53 +11,71 @@ from .models import Review
 import datetime
 import json
 
+
 def services_list(request):
-    services= Service.objects.all()
-    subservice= SubService.objects.all()
-    return render(request, 'main/services_list.html',{'services':services})
+    services = Service.objects.all()
+    return render(request, 'main/services_list.html', {'services': services})
+
 
 def index(request):
-    services= Service.objects.all()
-    return render(request, 'main/index.html',{'services':services})
+    services = Service.objects.all()
+    return render(request, 'main/index.html', {'services': services})
+
 
 def calendar(request):
-    services= Service.objects.all()
-    # Lista dni (np. Poniedziałek–Niedziela)
+    services = Service.objects.all()
+    # List of days (e.g., Monday–Sunday)
     start_date = datetime.date.today()
     week_days = [(start_date + datetime.timedelta(days=i)) for i in range(7)]
-    reservations = Reservation.objects.select_related("service").filter(date__in=week_days)
+    reservations = Reservation.objects.select_related(
+        "service"
+    ).filter(date__in=week_days)
     reserved_slots = [
-    {
-        "date": r.date,
-        "time": r.time.strftime("%H:%M"),
-        "service": r.service.title,
-        "service_duration": r.service.time,
-    }
-    for r in reservations
-]
-    # Lista godzin np. od 8:00 do 18:00 co 1h
+        {
+            "date": r.date,
+            "time": r.time.strftime("%H:%M"),
+            "service": r.service.title,
+            "service_duration": r.service.time,
+        }
+        for r in reservations
+    ]
+    # List of hours, e.g., from 8:00 to 18:00 in 1-hour intervals
     hours = [f"{h:02d}:00" for h in range(8, 19)]
-    return render(request, 'main/calendar.html',{'services':services, 'week_days': week_days,
-        'hours': hours, 'reserved_slots': reserved_slots})
+    return render(
+        request, 'main/calendar.html',
+        {
+            'services': services,
+            'week_days': week_days,
+            'hours': hours,
+            'reserved_slots': reserved_slots
+        }
+    )
+
 
 def calendar_view(request):
-    services = Service.objects.all()
     start_date = datetime.date.today()
     week_days = [(start_date + datetime.timedelta(days=i)) for i in range(7)]
     hours = [f"{h:02d}:00" for h in range(8, 20)]
 
-    # rezerwacje
-    reservations = Reservation.objects.select_related("service").filter(date__in=week_days)
+    # Reservations
+    reservations = Reservation.objects.select_related(
+        "service"
+    ).filter(date__in=week_days)
     reserved_map = {}  # (hour, date) -> (title, duration)
     for r in reservations:
         start_hour = r.time.hour
-        duration = r.service.time  # liczba godzin
+        duration = r.service.time  # Number of hours
         for i in range(duration):
             hour = f"{start_hour + i:02d}:00"
-            reserved_map[(hour, r.date)] = (r.service.title, duration, r.user, r.id)
+            reserved_map[(hour, r.date)] = (
+                r.service.title,
+                duration,
+                r.user,
+                r.id
+            )
     print(reserved_map)
 
-    # budujemy tabelę: lista wierszy
+    # Building a table: list of rows
     table = []
     for h in hours:
         row = []
@@ -91,59 +107,63 @@ def calendar_view(request):
         "table": table
     })
 
+
 def twillo_send(message):
     try:
-        # Dane z panelu Twilio
-       with open("config.json") as f:
-        config = json.load(f)
+        # Data from Twilio dashboard
+        with open("config.json") as f:
+            config = json.load(f)
 
-        account_sid = config["ACCOUNT_SID"]
-        auth_token = config["AUTH_TOKEN"]
-        twilio_number = config["TWILIO_NUMBER"]
-        to_number = config["TO_NUMBER"]
-        
-        client = Client(account_sid, auth_token)
-        
-        sms = client.messages.create(
-            body=message,
-            from_=twilio_number,
-            to=to_number
-        )
-        print(f"SMS wysłany! SID: {sms.sid}")
+            account_sid = config["ACCOUNT_SID"]
+            auth_token = config["AUTH_TOKEN"]
+            twilio_number = config["TWILIO_NUMBER"]
+            to_number = config["TO_NUMBER"]
+            client = Client(account_sid, auth_token)
+            sms = client.messages.create(
+                body=message,
+                from_=twilio_number,
+                to=to_number
+            )
+            print(f"SMS sent! SID: {sms.sid}")
     except Exception as e:
-            print("Błąd:", e)
+        print("Error:", e)
+
 
 @login_required(login_url='login')
 def reservation(request):
-    services= Service.objects.all()
-    selected_date = request.GET.get("date")  # np. '2025-09-17'
-    selected_hour = request.GET.get("hour")  # np. '10:00'
-    # rezerwacje
+    services = Service.objects.all()
+    selected_date = request.GET.get("date")  # e.g., '2025-09-17'
+    selected_hour = request.GET.get("hour")  # e.g., '10:00'
+    # Reservations
     start_date = datetime.date.today()
     week_days = [(start_date + datetime.timedelta(days=i)) for i in range(7)]
     hours = [f"{h:02d}:00" for h in range(8, 20)]
-    reservations = Reservation.objects.select_related("service").filter(date__in=week_days)
+    reservations = Reservation.objects.select_related(
+        "service"
+    ).filter(date__in=week_days)
     reserved_map = {}  # (hour, date) -> (title, duration)
     for r in reservations:
         start_hour = r.time.hour
-        duration = r.service.time  # liczba godzin
+        duration = r.service.time  # Number of hours
         for i in range(duration):
             hour = f"{start_hour + i:02d}:00"
             reserved_map[(hour, r.date)] = (r.service.title, duration)
     print(reserved_map)
-    
     hours = [f"{h:02d}:00" for h in range(8, 19)]
-    # odfiltruj zajęte godziny dla wybranego dnia
+    # Filter out the occupied hours for the selected day
     if selected_date:
         try:
-            selected_date_obj = datetime.datetime.strptime(selected_date, "%Y-%m-%d").date()
+            selected_date_obj = datetime.datetime.strptime(
+                selected_date,
+                "%Y-%m-%d"
+            ).date()
             hours = [
                 hour for hour in hours
                 if (hour, selected_date_obj) not in reserved_map
             ]
         except ValueError:
             pass
-    
+
     if request.method == "POST":
         service_id = request.POST.get("service")
         date = request.POST.get("date")
@@ -152,15 +172,24 @@ def reservation(request):
 
         service = Service.objects.get(id=service_id)
         Reservation.objects.create(
-                user=request.user, 
+                user=request.user,
                 service=service,
                 date=date,
                 time=time_obj
             )
-        twillo_send("New Reservation " +str(date))
+        twillo_send("New Reservation " + str(date))
         return redirect("calendar")
-    return render(request, 'main/reservation.html',{'services':services, 'hours':hours, "selected_date": selected_date,
-        "selected_hour": selected_hour,})
+    return render(
+        request,
+        'main/reservation.html',
+        {
+            'services': services,
+            'hours': hours,
+            "selected_date": selected_date,
+            "selected_hour": selected_hour,
+        }
+    )
+
 
 @login_required(login_url='login')
 def manage_reservation(request, pk):
@@ -170,12 +199,12 @@ def manage_reservation(request, pk):
     hours = [f"{h:02d}:00" for h in range(8, 20)]
 
     if request.method == "POST":
-        # jeśli kliknięto delete
+        # If delete was clicked
         if "delete" in request.POST:
             reservation.delete()
             return redirect("calendar")
 
-        # edycja istniejącej rezerwacji
+        # Editing an existing reservation
         service_id = request.POST.get("service")
         date = request.POST.get("date")
         time = request.POST.get("hour")
@@ -183,7 +212,7 @@ def manage_reservation(request, pk):
         service = get_object_or_404(Service, pk=service_id)
         time_obj = datetime.datetime.strptime(time, "%H:%M").time()
 
-        # modyfikacja istniejącego obiektu
+        # Modification of an existing object
         reservation.service = service
         reservation.date = date
         reservation.time = time_obj
@@ -197,18 +226,20 @@ def manage_reservation(request, pk):
         "hours": hours,
     })
 
+
 def resume(request):
-    services= Service.objects.all()
-    return render(request, 'main/about_me.html',{'services':services})
+    services = Service.objects.all()
+    return render(request, 'main/about_me.html', {'services': services})
+
 
 def services(request):
-    services= Service.objects.all()
-    subservice= SubService.objects.all()
-    return render(request, 'main/services.html',{'services':services})
+    services = Service.objects.all()
+    return render(request, 'main/services.html', {'services': services})
+
 
 def user_login(request):
     if request.method == 'POST':
-        action = request.POST.get('action')  # rozróżniamy formularze
+        action = request.POST.get('action')  # We differentiate between forms
         if action == 'login':
             username = request.POST['username']
             password = request.POST['password']
@@ -228,14 +259,22 @@ def user_login(request):
             elif User.objects.filter(username=username).exists():
                 messages.error(request, 'Username already taken.')
             else:
-                User.objects.create_user(username=username, email=email, password=password1)
-                messages.success(request, 'Account created! You can now log in.')
+                User.objects.create_user(
+                    username=username,
+                    email=email,
+                    password=password1
+                )
+                messages.success(
+                    request,
+                    'Account created! You can now log in.'
+                )
     return render(request, 'login.html')
+
 
 def chat_bot_view(request):
     user_message = request.GET.get("message", "").lower()
 
-    # Proste warunki
+    # Simple conditions
 
     if "hello" in user_message:
         reply = "Hi there! How can I help you?"
@@ -246,13 +285,16 @@ def chat_bot_view(request):
 
     return JsonResponse({"reply": reply})
 
+
 def chat_bot_page(request):
     return render(request, 'main/chatbot.html')
+
 
 class ReviewForm(forms.ModelForm):
     class Meta:
         model = Review
         fields = ['name', 'email', 'content', 'rating']
+
 
 def reviews_page(request):
     if request.method == 'POST':
@@ -264,13 +306,20 @@ def reviews_page(request):
         form = ReviewForm()
 
     reviews = Review.objects.all().order_by('-created_at')
-    return render(request, 'main/reviews.html', {'reviews': reviews, 'form': form})
+    return render(
+        request,
+        'main/reviews.html',
+        {'reviews': reviews, 'form': form}
+    )
+
 
 def blog(request):
     return render(request, 'main/blog.html')
 
+
 def career(request):
     return render(request, 'main/career.html')
+
 
 def contact(request):
     return render(request, 'main/contact.html')
