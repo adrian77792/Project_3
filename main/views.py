@@ -2,7 +2,7 @@ from django.http import JsonResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
-from .models import Service, Reservation
+from .models import Service, Reservation, BlogPost
 from twilio.rest import Client
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
@@ -312,9 +312,62 @@ def reviews_page(request):
         {'reviews': reviews, 'form': form}
     )
 
+def delete_review(request, pk):
+    review = get_object_or_404(Review, pk=pk)
+    email = request.POST.get("email") or request.GET.get("email")
+
+    if request.method == "GET":
+        return render(
+            request,
+            "main/delete_confirm.html",
+            {
+                "review": review,
+                "email": email
+            }
+        )
+
+    if request.method == "POST":
+        if email == review.email:
+            review.delete()
+            return redirect("review_manage")
+
+        return render(
+            request,
+            "main/delete_confirm.html",
+            {
+                "review": review,
+                "email": email,
+                "error": "Email does not match the author of this review."
+            }
+        )
+
+
+def review_manage(request):
+    if request.method == "POST":
+        email = request.POST.get("email")
+        reviews = Review.objects.filter(email=email)
+
+        return render(
+            request,
+            "main/review_manage_list.html",
+            {
+                "reviews": reviews,
+                "email": email
+            }
+        )
+
+    return render(request, "main/review_manage.html")
 
 def blog(request):
-    return render(request, 'main/blog.html')
+    posts = BlogPost.objects.filter(is_published=True)
+
+    return render(
+        request, 
+        'main/blog.html',
+        {
+            'posts': posts,
+        }
+    )
 
 
 def career(request):

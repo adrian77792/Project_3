@@ -17,46 +17,23 @@
 
 <body>
 {% include "partials/header.html" %}
-<div class="contact-container">
-    <h2 class="contact-title">Contact Me</h2>
-    <div class="contact-content">
-        <p class="contact-email">
-            Send me an e-mail: <a href="mailto:sandra@email.com">sandra@email.com</a>
-        </p>
-        <p class="contact-phone">
-            Call me: <a href="tel:123456789">123-456-789</a>
-        </p>    
+<div class="contact-container-wrapper">
+    <div class="contact-container">
+        <h2 class="contact-title">Contact Me</h2>
+        <div class="contact-content">
+            <p class="contact-email">
+                Send me an e-mail: <a href="mailto:sandra@email.com">sandra@email.com</a>
+            </p>
+            <p class="contact-phone">
+                Call me: <a href="tel:123456789">123-456-789</a>
+            </p>    
+        </div>
     </div>
 </div>
 
 
 <script>
-// Interaktywny wybór gwiazdek
-const stars = document.querySelectorAll('.star-rating span');
-const ratingInput = document.getElementById('id_rating');
 
-stars.forEach(star => {
-    star.addEventListener('click', () => {
-        ratingInput.value = star.dataset.value;
-        stars.forEach(s => s.classList.remove('selected'));
-        star.classList.add('selected');
-        // podświetlamy wszystkie gwiazdki <= klikniętej
-        stars.forEach(s => {
-            if (s.dataset.value <= star.dataset.value) s.classList.add('selected');
-        });
-    });
-
-    star.addEventListener('mouseover', () => {
-        stars.forEach(s => s.classList.remove('hover'));
-        stars.forEach(s => {
-            if (s.dataset.value <= star.dataset.value) s.classList.add('hover');
-        });
-    });
-
-    star.addEventListener('mouseout', () => {
-        stars.forEach(s => s.classList.remove('hover'));
-    });
-});
 </script>
 
 <!-- Footer section containing copyright and external contact links -->

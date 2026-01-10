@@ -1,8 +1,10 @@
 /* career.css */
 .career-container {
     background-color: #fdfcf9; /* jasne tło */
+    margin: 0 auto;
     padding: 2rem;
     min-height: 80vh;
+    max-width: 1200px; 
     color: #270049;
     font-family: 'Helvetica Neue', sans-serif;
     overflow-y: auto;
@@ -13,14 +15,14 @@
     font-weight: bold;
     text-align: center;
     margin-bottom: 3rem;
-    color: #6a4b7c;
+    color:#270049;
 }
 
 .career-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
-    margin-bottom: 160px;
+    margin-bottom: 80px;
 }
 
 .career-card {
