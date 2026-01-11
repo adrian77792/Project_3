@@ -25,7 +25,10 @@ urlpatterns = [
     path('reservation/', views.reservation, name='reservation'),
     path('chatbot/', views.chat_bot_page, name='chatbot'),
     path('reviews/', views.reviews_page, name='reviews_page'),
+    path('reviews/manage/', views.review_manage, name="review_manage"),
+    path('reviews/delete/<int:pk>/', views.delete_review, name="delete_review"),
     path('blog/', views.blog, name='blog'),
     path('career/', views.career, name='career'),
     path('contact/', views.contact, name='contact'),
+
     ]
