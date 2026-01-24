@@ -5,10 +5,11 @@ body,* {
 
 html {
   scroll-behavior: smooth;
+      overflow-x: hidden;
 }
 
 body {
-
+    overflow-x: hidden;
     margin: 0;
     font-family: 'Helvetica Neue', sans-serif;
     background-size: cover;
@@ -384,7 +385,7 @@ gap: 10px;
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  border: 2px solid #d4bf6e;
+  border: 3px solid #d4bf6e;
   border-radius: 16px;
   min-height: 320px;
   text-align: center;
@@ -626,6 +627,28 @@ gap: 10px;
   pointer-events: none;
 }
 
+#review-manage-container{
+        min-height: 80vh;
+        margin-bottom: 2rem;
+        padding-bottom: 4rem;
+        background-color: #c9bfdd;
+        padding: 4rem 3rem 2rem 3rem;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    #review-manage-container input {
+        border: 1px solid gold;
+        border-radius: 1.05rem;
+        padding: 0.4rem;
+    }
+
+    #review-manage-container button{
+        margin-top: 2rem;
+    }
+
 .calendar {
     display: grid;
     grid-template-columns: 80px repeat(7, 1fr);
@@ -842,31 +865,7 @@ gap: 10px;
     width: 100%;
     overflow: hidden;
     position: relative;
-  }
-  
-  .marquee {
-    display: flex;
-    width: max-content;
-    animation: scrollMarquee 30s linear infinite;
-  }
-  
-  .marquee span {
-    white-space: nowrap;
-    padding-right: 100px; /* odstęp między kopiami */
-    color: white;
-    font-size: 1.1rem;
-    font-weight: 400 !important;
-  }
-  
-  @keyframes scrollMarquee {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
-  }
-  
+  }  
 
   .holographic-card {
     position: relative;

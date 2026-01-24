@@ -3,14 +3,25 @@ body,* {
   margin: 0;
 }
 
+
+
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
-
+    overflow-x: hidden;
     margin: 0;
+    min-height: 100%;
     font-family: 'Helvetica Neue', sans-serif;
+    background-image: url('../img/tlo.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  width: 100%;
+
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -23,9 +34,20 @@ header.top-nav {
   overflow: hidden;
   border-bottom: 3px solid #d4bf6e; 
   height: 200px; 
-  background-color:#6a4b7c;
+  /*background-image: url('../img/tlo_header.jpg');
+  background-repeat: no-repeat;
+background-size: fit;*/
   margin: 0;
   padding: 0;
+}
+
+header.top-nav .header-img {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -3;
+  object-fit: cover;
 }
 .nav-top {
   position: relative;
@@ -38,14 +60,26 @@ header.top-nav {
 .nav-top-elements {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
   padding: 5px 30px 0px 30px;
   color: #6a4b7c;
   height: 167px;
 }
+
+.nav-top-elements > div {
+  flex: 1;
+}
+
+.nav-top-elements > div:first-child {
+  justify-content: flex-start;
+}
+.nav-top-elements > div:nth-child(2) {
+  justify-content: center; 
+}
+.nav-top-elements > div:last-child {
+  justify-content: flex-end !important;
+}
 .logo-container {
-  transform: translateX(41px);
 }
 .nav-top1 {
   display: flex;
@@ -95,9 +129,32 @@ header.top-nav {
   transform: translate(-12px, -33px) rotate(120deg);
 }
 
+.nav-bottom {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: column;
+  border-top: 1.6px solid#d4bf6e; /* złoto */
+  padding: 12px 10px;
+  gap: 0.5px;
+  background-color: #6a4b7c;
+  height: calc(93vh );
+  width: 250px;
+  position: fixed;
+  top:0;
+  left:0;
+  z-index: 1000;
+  padding-bottom: 15.5%;
+  transform: translateX(-270px);
+  transition:transform 0.4s ease-out;
+}
+.nav-bottom.open {
+  transform: translateX(0);
+}
+
 #nav-bottom .left{
 color: #ffffff;
-font-size:x-large;
+font-size: large;
 margin-left: 1.5rem;
 display: block;
 width: fit-content;
@@ -305,29 +362,6 @@ gap: 10px;
   flex-direction: row;
   gap: 10px;
 }
-  
-.nav-bottom {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  flex-direction: column;
-  border-top: 1.6px solid#d4bf6e; /* złoto */
-  padding: 12px 10px;
-  gap: 0.5px;
-  background-color: #6a4b7c;
-  height: calc(100vh);
-  width: 250px;
-  position: fixed;
-  top:0;
-  left:0;
-  z-index: 1000;
-  padding-bottom: 3.5%;
-  transform: translateX(-270px);
-  transition:transform 0.4s ease-out;
-}
-.nav-bottom.open {
-  transform: translateX(0);
-}
 
 /* === MAIN SECTION === */
 .main-section {
@@ -341,12 +375,12 @@ gap: 10px;
 }
 
 .main-section-wrapper {
-  background-image: url('../img/tlo.jpg');
+  /*background-image: url('../img/tlo.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
-  width: 100%;
+  width: 100%;*/
   max-width: 100%;
   padding-bottom: 3rem;
 }
@@ -384,7 +418,7 @@ gap: 10px;
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  border: 2px solid #d4bf6e;
+  border: 3px solid #d4bf6e;
   border-radius: 16px;
   min-height: 320px;
   text-align: center;
@@ -491,6 +525,7 @@ gap: 10px;
     z-index: -1;
     pointer-events: none;
   }
+  
 
 /* Fixed footer positioning */
 #footer {
@@ -519,6 +554,7 @@ gap: 10px;
 /* Left */
 .footer-left {
   flex: 1;
+  text-align: center;
 }
 
 /* Prevent text wrapping */
@@ -675,11 +711,13 @@ gap: 10px;
 }
 
 .calendar-cell {
-    border-bottom: 1px solid #eee;
-    border-right: 1px solid #eee;
+    border-bottom: 1px solid #fff;
+    border-right: 1px solid #fff;
     padding: 8px;
     min-height: 40px;
     cursor: pointer;
+	text-align: center;
+	text-align: center;
 }
 
 .calendar-cell:hover {
@@ -707,6 +745,25 @@ gap: 10px;
       flex-direction: column;
       align-items: center;
     }
+
+    .nav-top-elements {
+    position: relative;
+  }
+
+  /* Center logo absolutely */
+  .logo-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* Force mobile hamburger to right edge */
+  .desktop-hide.hamburger {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 
     .mobile-hide {
       display:none !important
@@ -864,31 +921,7 @@ gap: 10px;
     width: 100%;
     overflow: hidden;
     position: relative;
-  }
-  
-  .marquee {
-    display: flex;
-    width: max-content;
-    animation: scrollMarquee 30s linear infinite;
-  }
-  
-  .marquee span {
-    white-space: nowrap;
-    padding-right: 100px; /* odstęp między kopiami */
-    color: white;
-    font-size: 1.1rem;
-    font-weight: 400 !important;
-  }
-  
-  @keyframes scrollMarquee {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
-  }
-  
+  }  
 
   .holographic-card {
     position: relative;
@@ -1098,21 +1131,33 @@ select:focus, input[type="date"]:focus, input[type="time"]:focus {
   transform: translateX(-50%) translateY(50%);
 }
 
-.desktop-hero-book-btn {}
+.overlay-image-container {
+  display: flex;
+  align-items: center;
+}
+
+.overlay-image-wrapper {
+  flex: 0 0 auto !important;
+  width: fit-content;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 2px solid rgb(212, 191, 110);
+  box-shadow: 0px 0px 1px #000;
+  border-radius: 4px;
+  padding: 1px;
+}
   
 .overlay-image {
-  padding: 2rem 2rem;
-  background-color: rgba(212, 191, 110, 0.6);
-  border: 1px solid #6a4b7c;
-  box-shadow: inset 0px 0px 3px #6a4b7c;
-  box-shadow: 0px 0px 3px #6a4b7c;
-  border-radius: 8rem 0px 8rem 0px;
+  padding: 0.2rem 1.2rem;
   text-align: center;
+  text-wrap: nowrap;
+  color: rgb(212, 191, 110);
+  background-image: linear-gradient(to bottom, #3e305d, #000);
+  border-radius: 4px;
+  border-top: 1px solid #6a4b7c;
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   text-decoration: none;
   height: auto !important;
-  max-width: 40%;  
   cursor: pointer;
   opacity: 1;
   z-index: 3; /* tło */

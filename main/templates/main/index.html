@@ -55,13 +55,11 @@
           {% for service in services %}
           <div class="service-card card5 holographic-card" style="background-image: url('{{ service.file_path }}');">
             <h3>{{ service.title }}</h3>
-            <p>
-              {{ service.description }}
-            </p>
-            <!-- link use "before" i "after" immage -->
+            
+            
             <a href="{% url 'calendar' %}" class="book-btn" >
               
-                 Book Now <!-- <div style="font-size: 22px;">&#x276F;</div> -->
+                 BOOK NOW <div style="font-size: 22px;">&#x276F;</div>
             
             </a>
           </div>

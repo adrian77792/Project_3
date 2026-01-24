@@ -16,65 +16,67 @@
 <body>
 {% include "partials/header.html" %}  
 <div class="main-section-wrapper">
-<div class="services-container">
+    <div class="services-container">
 
-    <h1 class="services-title">Our Services</h1>
-    <div class="service-cards-container">
-    {% for service in services %}
-    <div class="service-card" style="background-image: url('{{ service.file_path }}');">
+        <h1 class="services-title">Our Services</h1>
+        <div class="service-cards-container">
+        {% for service in services %}
+            <div class="service-card" style="background-image: url('{{ service.file_path }}');">
 
-        <h3>{{ service.title }}</h3>
-        <p>{{ service.description }}</p>
+                <h3>{{ service.title }}</h3>
 
-        {% if service.time %}
-            <p><strong>Total duration:</strong> {{ service.time }} min</p>
-        {% endif %}
+                {% if service.time %}
+                    <p><strong>Total duration:</strong> {{ service.time }} min</p>
+                {% endif %}
 
-        {% if service.subservice.all %}
-        <div class="subservice-list">
+                {% if service.subservice.all %}
+                <div class="subservice-list">
 
-            {% for sub in service.subservice.all %}
-            <div class="subservice-item">
+                    {% for sub in service.subservice.all %}
+                    <div class="subservice-item">
 
-                <div class="subservice-header">
-                    <span>{{ sub.title }}</span>
-                    <span>{{ sub.price }} zł</span>
-                </div>
+                        <div class="subservice-header">
+                            <span>{{ sub.title }}</span>
+                            <span>{{ sub.price }} zł</span>
+                        </div>
 
-                {% if sub.description %}
-                <div class="subservice-description">
-                    {{ sub.description }}
+                        {% if sub.description %}
+                        <div class="subservice-description">
+                            {{ sub.description }}
+                        </div>
+                        {% endif %}
+
+                        {% if sub.duration %}
+                        <div class="subservice-duration">
+                            ⏱ {{ sub.duration }} h
+                        </div>
+                        {% endif %}
+
+                        <a href="{% url 'calendar' %}" class="subservice-btn">Book now</a>
+
+                    </div>
+                    {% endfor %}
+
                 </div>
                 {% endif %}
 
-                {% if sub.duration %}
-                <div class="subservice-description">
-                    ⏱ {{ sub.duration }} h
-                </div>
-                {% endif %}
-
-                <a href="{% url 'calendar' %}" class="subservice-btn">Book now</a>
+                <div class="subservice-btn">Book Now</div>
 
             </div>
+            {% empty %}
+            <p>No services available.</p>
             {% endfor %}
-
         </div>
-        {% endif %}
-
     </div>
-    {% empty %}
-    <p>No services available.</p>
-    {% endfor %}
-    </div>
-</div>
 </div>
 {% include "partials/footer.html" %}
 <style>
     /* ====================
        Services Page 
        ==================*/
+    
     .services-container {
-        width: 100%;
+        max-width: 100%;
         max-width: 1200px;
         margin: 0 auto;
         padding: 40px 20px;
@@ -97,6 +99,7 @@
    ======================*/
     .service-cards-container {
         display: flex;
+        flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;   
         gap: 40px;                 
@@ -106,10 +109,10 @@
        Main Services Cards 
        ==================== */
     .service-card {
-        width: calc(50% - 40px);
+        width: calc(50% - 80px);
         background-size: cover;
         background-position: center;
-        border: 2px solid #d4bf6e;
+        border: 3px solid #d4bf6e;
         border-radius: 18px;
         padding: 25px;
         position: relative;
@@ -208,7 +211,7 @@
 .subservice-btn {
     display: inline-block;
     margin-top: 12px;
-    padding: 6px 14px;
+    padding: 3px 8px;
     background-color: #6a4b7c;
     border: 2px solid #d4bf6e;
     color: white;
@@ -216,6 +219,10 @@
     border-radius: 20px;
     text-decoration: none;
     transition: all 0.3s ease;
+}
+
+.subservice-btn:hover {
+    color: #000;
 }
 
 .subservice-btn:hover {
